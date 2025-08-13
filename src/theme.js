@@ -385,7 +385,7 @@ function getTheme({ theme, name }) {
       {
         "scope": "entity.name.function",
         "settings": {
-          foreground: lightDark(scale.purple[5], scale.purple[2])
+          foreground: lightDark(scale.blue[5], scale.blue[2])
         }
       },
       {
@@ -406,7 +406,34 @@ function getTheme({ theme, name }) {
       {
         scope: ["storage", "storage.type"],
         settings: {
-          foreground: lightDark(scale.red[5], scale.red[3])
+          foreground: lightDark(scale.purple[5], scale.purple[2])
+        },
+      },
+      {
+        "scope": [
+          "variable.other.property",
+          "meta.object-literal.key"
+        ],
+        "settings": {
+            "foreground": lightDark(scale.red[5], scale.red[3]),
+            "fontStyle": ""
+        }
+    },
+      {
+        scope: [
+          "entity.name.type",
+        ],
+        settings: {
+          foreground: lightDark(scale.green[6], scale.green[2]),
+        },
+      },
+      {
+        scope: [
+          "entity.other.attribute-name",
+          "keyword.control.conditional.vue"
+        ],
+        settings: {
+          foreground: lightDark(scale.blue[6], scale.blue[2]),
         },
       },
       {
@@ -540,7 +567,7 @@ function getTheme({ theme, name }) {
       {
         scope: "support.type.property-name.json",
         settings: {
-          foreground: lightDark(scale.green[6], scale.green[1])
+          foreground: lightDark(scale.red[6], scale.red[2])
         },
       },
       {
