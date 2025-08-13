@@ -22,14 +22,6 @@
 
 若仅做少量个性化调整，推荐在 VS Code 用户设置中覆盖颜色键值。参考官方文档“Color Theme”中关于自定义主题颜色的说明：`https://code.visualstudio.com/api/extension-guides/color-theme`。
 
-示例（在 `settings.json` 中）：
-
-```json
-"workbench.colorCustomizations": {
-  "editor.lineHighlightBackground": "#00000010"
-}
-```
-
 ### 本地开发
 
 1. 克隆并用 VS Code 打开仓库。
@@ -61,5 +53,3 @@ themes/               # 构建产物（运行构建脚本后生成）
 ### 许可协议
 
 基于 MIT 协议发布，详见仓库根目录的 `LICENSE`。
-
-

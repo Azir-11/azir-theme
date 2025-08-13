@@ -64,5 +64,3 @@
 ### 七、与 GitHub Web 对齐
 
 `src/colors.js` 中保留了少量“临时覆盖”，用于在上游 `@primer/primitives` 尚未发布时，快速对齐 GitHub Web 的视觉。等上游同步后可移除这些覆盖，以降低维护成本。
-
-

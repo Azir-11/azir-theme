@@ -1,15 +1,11 @@
 {
+  "publisher": "Azir",
   "name": "azir-vscode-theme",
   "displayName": "Azir Theme",
-  "description": "Azir theme for VS Code",
+  "type": "module",
   "version": "0.0.1",
-  "publisher": "Azir",
+  "description": "Azir theme for VS Code",
   "license": "MIT",
-  "icon": "icon.png",
-  "galleryBanner": {
-    "color": "#1b1f23",
-    "theme": "dark"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/primer/github-vscode-theme"
@@ -17,12 +13,6 @@
   "bugs": {
     "url": "https://github.com/primer/github-vscode-theme/issues"
   },
-  "engines": {
-    "vscode": "^1.43.0"
-  },
-  "categories": [
-    "Themes"
-  ],
   "keywords": [
     "theme",
     "github",
@@ -31,6 +21,17 @@
     "protanopia",
     "colorblind"
   ],
+  "categories": [
+    "Themes"
+  ],
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#1b1f23",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.43.0"
+  },
   "contributes": {
     "themes": [
       {
@@ -60,20 +61,24 @@
       }
     ]
   },
+  "scripts": {
+    "start": "nodemon --watch src src/index.js",
+    "build": "node src/index.js && mkdir -p build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "package": "vsce package -o ./build/github-vscode-theme.vsix",
+    "prepublishOnly": "npm run build && vsce publish",
+    "release": "changeset publish"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^5.2.1",
     "@changesets/changelog-github": "^0.4.1",
     "@changesets/cli": "^2.17.0",
     "@primer/primitives": "7.10.0",
     "chroma-js": "^2.1.2",
+    "eslint": "^9.33.0",
     "nodemon": "^2.0.3",
     "vsce": "^1.100.1"
-  },
-  "scripts": {
-    "start": "nodemon --watch src src/index.js",
-    "build": "node src/index.js && mkdir -p build",
-    "package": "vsce package -o ./build/github-vscode-theme.vsix",
-    "prepublishOnly": "npm run build && vsce publish",
-    "release": "changeset publish"
   },
   "__metadata": {
     "id": "7328a705-91fc-49e6-8293-da6f112e482d",
