@@ -348,7 +348,6 @@ function getTheme({ theme, name }) {
         scope: [
           'constant',
           'entity.name.constant',
-          'variable.other.constant',
           'variable.other.enummember',
           'variable.language',
           'entity',
@@ -410,7 +409,6 @@ function getTheme({ theme, name }) {
       },
       {
         scope: [
-          'variable.other.property',
           'meta.object-literal.key',
         ],
         settings: {
@@ -447,7 +445,6 @@ function getTheme({ theme, name }) {
       },
       {
         scope: [
-          'string',
           'string punctuation.section.embedded source',
         ],
         settings: {
@@ -467,15 +464,29 @@ function getTheme({ theme, name }) {
         },
       },
       {
-        scope: 'variable',
+        scope: [
+          'variable.other.constant',
+          'variable.other',
+          'string variable',
+        ],
         settings: {
-          foreground: lightDark(scale.orange[6], scale.orange[2]),
+          foreground: color.fg.default,
         },
       },
       {
-        scope: 'variable.other',
+        scope: [
+          'variable.other.property',
+        ],
         settings: {
-          foreground: color.fg.default,
+          foreground: lightDark(scale.red[5], scale.red[3]),
+        },
+      },
+      {
+        scope: [
+          'meta.attribute.class.html',
+        ],
+        settings: {
+          foreground: lightDark(scale.orange[6], scale.orange[3]),
         },
       },
       {
@@ -519,12 +530,6 @@ function getTheme({ theme, name }) {
         scope: 'message.error',
         settings: {
           foreground: lightDark(scale.red[7], scale.red[2]),
-        },
-      },
-      {
-        scope: 'string variable',
-        settings: {
-          foreground: lightDark(scale.blue[6], scale.blue[2]),
         },
       },
       {

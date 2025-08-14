@@ -2,7 +2,6 @@
   "publisher": "Azir-11",
   "name": "azir-vscode-theme",
   "displayName": "Azir Theme",
-  "type": "module",
   "version": "0.0.1",
   "description": "Azir theme for VS Code",
   "license": "MIT",
