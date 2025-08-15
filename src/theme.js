@@ -325,7 +325,7 @@ function getTheme({ theme, name }) {
       'peekViewEditor.matchHighlightBackground': onlyDark(v('bgColor-attention-muted')),
       'peekViewResult.matchHighlightBackground': onlyDark(v('bgColor-attention-muted')),
       'peekViewEditor.background': onlyDark(v('bgColor-neutral-muted')),
-      'peekViewResult.background': onlyDark(scale.gray[9]),
+      'peekViewResult.background': onlyDark(v('bgColor-default')),
 
       'settings.headerForeground': v('fgColor-default'),
       'settings.modifiedItemIndicator': v('bgColor-attention-muted'),
