@@ -12,7 +12,16 @@ function isValidColor(color) {
   return false
 }
 
-// 将颜色按组分类
+// 根据变量名提取子组前缀
+function getSubgroupPrefix(varName) {
+  const parts = varName.split('-')
+  if (parts.length >= 2) {
+    return `${parts[0]}-${parts[1]}`
+  }
+  return parts[0]
+}
+
+// 将颜色按组分类，并支持子分组
 function categorizeColors(variables) {
   const categorized = {}
   const usedKeys = new Set()
@@ -24,7 +33,8 @@ function categorizeColors(variables) {
     const group = colorGroups[groupKey]
     categorized[groupKey] = {
       title: group.title,
-      colors: []
+      colors: [],
+      subgroups: {}
     }
     
     for (const [varName, value] of Object.entries(variables)) {
@@ -37,17 +47,32 @@ function categorizeColors(variables) {
       })
       
       if (matches && isValidColor(value)) {
-        categorized[groupKey].colors.push({
+        const colorItem = {
           name: varName,
           value: value,
           cssVar: `--${varName}`
-        })
+        }
+        
+        categorized[groupKey].colors.push(colorItem)
+        
+        // 创建子分组
+        const subgroupPrefix = getSubgroupPrefix(varName)
+        if (!categorized[groupKey].subgroups[subgroupPrefix]) {
+          categorized[groupKey].subgroups[subgroupPrefix] = []
+        }
+        categorized[groupKey].subgroups[subgroupPrefix].push(colorItem)
+        
         usedKeys.add(varName)
       }
     }
     
-    // 按名称排序
+    // 按名称排序主颜色列表
     categorized[groupKey].colors.sort((a, b) => a.name.localeCompare(b.name))
+    
+    // 按名称排序每个子分组
+    for (const subgroupKey in categorized[groupKey].subgroups) {
+      categorized[groupKey].subgroups[subgroupKey].sort((a, b) => a.name.localeCompare(b.name))
+    }
     
     // 如果组为空，删除它
     if (categorized[groupKey].colors.length === 0) {
@@ -66,6 +91,13 @@ function generateHTML(lightColors, darkColors) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Primer Primitives 颜色预览</title>
+    <script>
+        // 颜色数据
+        window.colorData = {
+            light: ${JSON.stringify(lightColors)},
+            dark: ${JSON.stringify(darkColors)}
+        };
+    </script>
     <style>
         * {
             margin: 0;
@@ -289,6 +321,45 @@ function generateHTML(lightColors, darkColors) {
             background: #21262d;
             color: #8b949e;
         }
+        
+        /* 子分组样式 */
+        .subgroup {
+            margin-bottom: 24px;
+        }
+        
+        .subgroup-header {
+            padding: 8px 16px;
+            background: #f1f3f4;
+            border-left: 3px solid #0969da;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #24292f;
+        }
+        
+        .dark-theme .subgroup-header {
+            background: #30363d;
+            color: #f0f6fc;
+        }
+        
+        .subgroup-toggle {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .subgroup-toggle:before {
+            content: '▼ ';
+            font-size: 12px;
+            transition: transform 0.2s ease;
+        }
+        
+        .subgroup.collapsed .subgroup-toggle:before {
+            transform: rotate(-90deg);
+        }
+        
+        .subgroup.collapsed .subgroup-colors {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -303,44 +374,21 @@ function generateHTML(lightColors, darkColors) {
             <button class="theme-btn" onclick="switchTheme('dark')">Dark Theme</button>
         </div>
         
-        <div id="light-theme" class="theme-content active">
-            ${generateThemeHTML(lightColors, 'light')}
+        <div id="theme-container">
+            <!-- 颜色内容将通过 JavaScript 动态生成 -->
         </div>
         
-        <div id="dark-theme" class="theme-content">
-            ${generateThemeHTML(darkColors, 'dark')}
-        </div>
-        
-        <div class="stats">
-            <p>Light Theme: ${getTotalColors(lightColors)} 个颜色变量 | Dark Theme: ${getTotalColors(darkColors)} 个颜色变量</p>
-            <p>点击颜色块或颜色值可复制到剪贴板</p>
+        <div class="stats" id="stats-container">
+            <!-- 统计信息将通过 JavaScript 动态生成 -->
         </div>
     </div>
     
     <div id="copy-feedback" class="copy-feedback">已复制到剪贴板！</div>
     
     <script>
-        function switchTheme(theme) {
-            // 更新按钮状态
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // 更新主题内容
-            document.querySelectorAll('.theme-content').forEach(content => {
-                content.classList.remove('active');
-            });
-            document.getElementById(theme + '-theme').classList.add('active');
-            
-            // 更新页面主题
-            if (theme === 'dark') {
-                document.body.classList.add('dark-theme');
-            } else {
-                document.body.classList.remove('dark-theme');
-            }
-        }
+        let currentTheme = 'light';
         
+        // 复制到剪贴板
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
                 showCopyFeedback();
@@ -349,6 +397,7 @@ function generateHTML(lightColors, darkColors) {
             });
         }
         
+        // 显示复制反馈
         function showCopyFeedback() {
             const feedback = document.getElementById('copy-feedback');
             feedback.classList.add('show');
@@ -357,54 +406,135 @@ function generateHTML(lightColors, darkColors) {
             }, 2000);
         }
         
-        // 添加点击事件监听器
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('color-swatch')) {
-                const colorValue = e.target.style.backgroundColor || e.target.getAttribute('data-color');
-                copyToClipboard(colorValue);
-            } else if (e.target.classList.contains('color-value')) {
-                copyToClipboard(e.target.textContent);
+        // 切换子分组显示/隐藏
+        function toggleSubgroup(subgroupId) {
+            const subgroup = document.getElementById(subgroupId);
+            subgroup.classList.toggle('collapsed');
+        }
+        
+        // 渲染颜色项
+        function renderColorItem(color) {
+            return \`
+                <div class="color-item">
+                    <div class="color-swatch" 
+                         style="background-color: \${color.value};" 
+                         data-color="\${color.value}"
+                         onclick="copyToClipboard('\${color.value}')"
+                         title="点击复制颜色值"></div>
+                    <div class="color-info">
+                        <div class="color-name" 
+                             onclick="copyToClipboard('\${color.name}')"
+                             title="点击复制变量名">\${color.cssVar}</div>
+                        <div class="color-value" 
+                             onclick="copyToClipboard('\${color.value}')"
+                             title="点击复制颜色值">\${color.value}</div>
+                    </div>
+                </div>
+            \`;
+        }
+        
+        // 渲染子分组
+        function renderSubgroup(subgroupKey, colors, groupKey) {
+            const subgroupId = \`subgroup-\${groupKey}-\${subgroupKey}\`;
+            const colorItemsHtml = colors.map(color => renderColorItem(color)).join('');
+            
+            return \`
+                <div class="subgroup" id="\${subgroupId}">
+                    <div class="subgroup-header">
+                        <span class="subgroup-toggle" onclick="toggleSubgroup('\${subgroupId}')">
+                            \${subgroupKey} (\${colors.length} 个)
+                        </span>
+                    </div>
+                    <div class="subgroup-colors">
+                        <div class="color-grid">
+                            \${colorItemsHtml}
+                        </div>
+                    </div>
+                </div>
+            \`;
+        }
+        
+        // 渲染颜色组
+        function renderColorGroup(groupKey, group) {
+            const subgroups = group.subgroups || {};
+            const subgroupKeys = Object.keys(subgroups);
+            
+            let contentHtml = '';
+            
+            if (subgroupKeys.length > 1) {
+                // 如果有多个子分组，按子分组显示
+                contentHtml = subgroupKeys
+                    .sort()
+                    .map(subgroupKey => renderSubgroup(subgroupKey, subgroups[subgroupKey], groupKey))
+                    .join('');
+            } else {
+                // 如果只有一个子分组或没有子分组，直接显示所有颜色
+                contentHtml = \`
+                    <div class="color-grid">
+                        \${group.colors.map(color => renderColorItem(color)).join('')}
+                    </div>
+                \`;
             }
+            
+            return \`
+                <div class="color-group">
+                    <div class="group-header">
+                        <h2 class="group-title">\${group.title} (\${group.colors.length} 个)</h2>
+                    </div>
+                    \${contentHtml}
+                </div>
+            \`;
+        }
+        
+        // 渲染主题内容
+        function renderTheme(theme) {
+            const themeData = window.colorData[theme];
+            const container = document.getElementById('theme-container');
+            
+            let html = '';
+            for (const [groupKey, group] of Object.entries(themeData)) {
+                html += renderColorGroup(groupKey, group);
+            }
+            
+            container.innerHTML = html;
+            
+            // 更新统计信息
+            const totalColors = Object.values(themeData).reduce((total, group) => total + group.colors.length, 0);
+            const statsContainer = document.getElementById('stats-container');
+            statsContainer.innerHTML = \`
+                <p>当前主题: \${totalColors} 个颜色变量</p>
+                <p>点击颜色块、颜色值或变量名可复制到剪贴板</p>
+            \`;
+        }
+        
+        // 切换主题
+        function switchTheme(theme) {
+            currentTheme = theme;
+            
+            // 更新按钮状态
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 更新页面主题
+            if (theme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+            
+            // 重新渲染内容
+            renderTheme(theme);
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTheme(currentTheme);
         });
     </script>
 </body>
 </html>`
-}
-
-function generateThemeHTML(categorizedColors, theme) {
-  let html = ''
-  
-  for (const [groupKey, group] of Object.entries(categorizedColors)) {
-    html += `
-        <div class="color-group">
-            <div class="group-header">
-                <h2 class="group-title">${group.title} (${group.colors.length} 个)</h2>
-            </div>
-            <div class="color-grid">
-    `
-    
-    for (const color of group.colors) {
-      html += `
-                <div class="color-item">
-                    <div class="color-swatch" 
-                         style="background-color: ${color.value};" 
-                         data-color="${color.value}"
-                         title="点击复制颜色值"></div>
-                    <div class="color-info">
-                        <div class="color-name">${color.cssVar}</div>
-                        <div class="color-value" title="点击复制">${color.value}</div>
-                    </div>
-                </div>
-      `
-    }
-    
-    html += `
-            </div>
-        </div>
-    `
-  }
-  
-  return html
 }
 
 function getTotalColors(categorizedColors) {
