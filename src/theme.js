@@ -14,7 +14,7 @@ const { getColors } = require('./colors')
 function getTheme({ theme, name }) {
   const themes = options => options[theme] // Usage: themes({ light: "lightblue", light_high_contrast: "lightblue", light_colorblind: "lightblue", dark: "darkblue", dark_high_contrast: "darkblue", dark_colorblind: "darkblue", dark_dimmed: "royalblue" })
   const { variables, scale } = getColors(theme)
-  
+
   // 辅助函数：获取变量值并确保为十六进制格式
   const v = (varName) => {
     const color = variables[varName] || '#000000'
@@ -236,10 +236,10 @@ function getTheme({ theme, name }) {
 
       'debugIcon.breakpointForeground': v('fgColor-danger'),
 
-      'debugConsole.infoForeground': scale.gray[7],
+      'debugConsole.infoForeground': scale.green[7],
       'debugConsole.warningForeground': scale.yellow[3],
       'debugConsole.errorForeground': scale.red[8],
-      'debugConsole.sourceForeground': scale.yellow[2],
+      'debugConsole.sourceForeground': scale.lime[2],
       'debugConsoleInputIcon.foreground': scale.purple[3],
 
       'debugTokenExpression.name': scale.blue[8],
@@ -249,38 +249,38 @@ function getTheme({ theme, name }) {
       'debugTokenExpression.number': scale.green[2],
       'debugTokenExpression.error': scale.red[8],
 
-      'symbolIcon.arrayForeground': scale.orange[3],
+      'symbolIcon.arrayForeground': scale.teal[3],
       'symbolIcon.booleanForeground': scale.blue[3],
-      'symbolIcon.classForeground': scale.orange[3],
+      'symbolIcon.classForeground': scale.teal[3],
       'symbolIcon.colorForeground': scale.blue[8],
       'symbolIcon.constructorForeground': scale.purple[8],
-      'symbolIcon.enumeratorForeground': scale.orange[3],
+      'symbolIcon.enumeratorForeground': scale.teal[3],
       'symbolIcon.enumeratorMemberForeground': scale.blue[3],
       'symbolIcon.eventForeground': scale.gray[4],
-      'symbolIcon.fieldForeground': scale.orange[3],
-      'symbolIcon.fileForeground': scale.yellow[3],
-      'symbolIcon.folderForeground': scale.yellow[3],
-      'symbolIcon.functionForeground': scale.purple[3],
-      'symbolIcon.interfaceForeground': scale.orange[3],
+      'symbolIcon.fieldForeground': scale.teal[3],
+      'symbolIcon.fileForeground': scale.lime[3],
+      'symbolIcon.folderForeground': scale.lime[3],
+      'symbolIcon.functionForeground': scale.green[3],
+      'symbolIcon.interfaceForeground': scale.teal[3],
       'symbolIcon.keyForeground': scale.blue[3],
       'symbolIcon.keywordForeground': scale.red[7],
-      'symbolIcon.methodForeground': scale.purple[3],
+      'symbolIcon.methodForeground': scale.green[3],
       'symbolIcon.moduleForeground': scale.red[7],
       'symbolIcon.namespaceForeground': scale.red[7],
       'symbolIcon.nullForeground': scale.blue[3],
       'symbolIcon.numberForeground': scale.green[3],
-      'symbolIcon.objectForeground': scale.orange[3],
+      'symbolIcon.objectForeground': scale.teal[3],
       'symbolIcon.operatorForeground': scale.blue[8],
-      'symbolIcon.packageForeground': scale.orange[3],
-      'symbolIcon.propertyForeground': scale.orange[3],
+      'symbolIcon.packageForeground': scale.teal[3],
+      'symbolIcon.propertyForeground': scale.teal[3],
       'symbolIcon.referenceForeground': scale.blue[3],
       'symbolIcon.snippetForeground': scale.blue[3],
       'symbolIcon.stringForeground': scale.blue[8],
-      'symbolIcon.structForeground': scale.orange[3],
+      'symbolIcon.structForeground': scale.teal[3],
       'symbolIcon.textForeground': scale.blue[8],
       'symbolIcon.typeParameterForeground': scale.blue[8],
       'symbolIcon.unitForeground': scale.blue[3],
-      'symbolIcon.variableForeground': scale.orange[3],
+      'symbolIcon.variableForeground': scale.teal[3],
       'symbolIcon.constantForeground': scale.green[6],
 
       'terminal.foreground': v('fgColor-default'),
@@ -302,9 +302,9 @@ function getTheme({ theme, name }) {
       'terminal.ansiBrightWhite': v('color-ansi-white-bright'),
 
       // 不同层级的括号
-      'editorBracketHighlight.foreground1': scale.blue[8],
-      'editorBracketHighlight.foreground2': scale.green[8],
-      'editorBracketHighlight.foreground3': scale.yellow[8],
+      'editorBracketHighlight.foreground1': scale.green[8],
+      'editorBracketHighlight.foreground2': scale.teal[8],
+      'editorBracketHighlight.foreground3': scale.lime[8],
       'editorBracketHighlight.foreground4': scale.red[8],
       'editorBracketHighlight.foreground5': scale.pink[8],
       'editorBracketHighlight.foreground6': scale.purple[8],
@@ -337,7 +337,7 @@ function getTheme({ theme, name }) {
       {
         scope: ['comment', 'punctuation.definition.comment', 'string.comment'],
         settings: {
-          foreground: scale.gray[7],
+          foreground: scale.green[7],
         },
       },
       {
@@ -358,7 +358,7 @@ function getTheme({ theme, name }) {
           'entity',
         ],
         settings: {
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
       {
@@ -368,7 +368,7 @@ function getTheme({ theme, name }) {
           'meta.definition.variable',
         ],
         settings: {
-          foreground: scale.orange[8],
+          foreground: scale.teal[8],
         },
       },
       {
@@ -382,14 +382,14 @@ function getTheme({ theme, name }) {
           'meta.embedded.expression',
         ],
         settings: {
-          foreground: "#FFF",
-          background: "#FFF"
+          foreground: '#FFF',
+          background: '#FFF',
         },
       },
       {
         scope: 'entity.name.function',
         settings: {
-          foreground: v("display-blue-scale-8"),
+          foreground: v('display-green-scale-8'),
         },
       },
       {
@@ -398,19 +398,19 @@ function getTheme({ theme, name }) {
           'support.class.component',
         ],
         settings: {
-          foreground: scale.red[8],
+          foreground: scale.green[8],
         },
       },
       {
         scope: 'keyword',
         settings: {
-          foreground: scale.red[8],
+          foreground: scale.green[8],
         },
       },
       {
         scope: ['storage', 'storage.type'],
         settings: {
-          foreground: scale.purple[9],
+          foreground: scale.teal[9],
         },
       },
       {
@@ -418,7 +418,7 @@ function getTheme({ theme, name }) {
           'meta.object-literal.key',
         ],
         settings: {
-          foreground: scale.red[8],
+          foreground: scale.green[8],
           fontStyle: '',
         },
       },
@@ -427,7 +427,7 @@ function getTheme({ theme, name }) {
           'entity.name.type',
         ],
         settings: {
-          foreground: scale.green[9],
+          foreground: scale.teal[9],
         },
       },
       {
@@ -484,7 +484,7 @@ function getTheme({ theme, name }) {
           'variable.other.property',
         ],
         settings: {
-          foreground: scale.red[8],
+          foreground: scale.teal[9],
         },
       },
       {
@@ -492,7 +492,7 @@ function getTheme({ theme, name }) {
           'meta.attribute.class.html',
         ],
         settings: {
-          foreground: scale.orange[8],
+          foreground: scale.teal[8],
         },
       },
       {
@@ -527,7 +527,7 @@ function getTheme({ theme, name }) {
         scope: 'carriage-return',
         settings: {
           fontStyle: 'italic underline',
-          background: scale.red[8],
+          background: scale.green[8],
           foreground: scale.gray[9],
           content: '^M',
         },
@@ -596,13 +596,13 @@ function getTheme({ theme, name }) {
         scope: ['markup.heading', 'markup.heading entity.name'],
         settings: {
           fontStyle: 'bold',
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
       {
         scope: 'markup.quote',
         settings: {
-          foreground: scale.green[9],
+          foreground: scale.teal[9],
         },
       },
       {
@@ -634,7 +634,7 @@ function getTheme({ theme, name }) {
       {
         scope: 'markup.inline.raw',
         settings: {
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
       {
@@ -651,7 +651,7 @@ function getTheme({ theme, name }) {
       {
         scope: ['punctuation.section.embedded'],
         settings: {
-          foreground: scale.red[7],
+          foreground: scale.green[7],
         },
       },
       {
@@ -668,8 +668,8 @@ function getTheme({ theme, name }) {
       {
         scope: ['markup.changed', 'punctuation.definition.changed'],
         settings: {
-          background: scale.orange[8],
-          foreground: scale.orange[8],
+          background: scale.teal[8],
+          foreground: scale.teal[8],
         },
       },
       {
@@ -682,27 +682,27 @@ function getTheme({ theme, name }) {
       {
         scope: 'meta.diff.range',
         settings: {
-          foreground: scale.purple[8],
+          foreground: scale.teal[8],
           fontStyle: 'bold',
         },
       },
       {
         scope: 'meta.diff.header',
         settings: {
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
       {
         scope: 'meta.separator',
         settings: {
           fontStyle: 'bold',
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
       {
         scope: 'meta.output',
         settings: {
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
       {
@@ -715,7 +715,7 @@ function getTheme({ theme, name }) {
           'brackethighlighter.quote',
         ],
         settings: {
-          foreground: scale.gray[7],
+          foreground: scale.green[7],
         },
       },
       {
@@ -727,7 +727,7 @@ function getTheme({ theme, name }) {
       {
         scope: ['constant.other.reference.link', 'string.other.link'],
         settings: {
-          foreground: scale.blue[8],
+          foreground: scale.green[8],
         },
       },
     ],
