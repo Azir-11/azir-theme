@@ -1,9 +1,26 @@
-.vscode/**
-.vscode-test/**
-.changeset/
-.github/
-.gitignore
-/node_modules/
-/package-lock.json
-/src/
-/build/
+# 忽略开发相关文件和目录
+node_modules
+src
+build
+.github
+.vscode
+.vscode-test
+.changeset
+
+# 忽略配置文件
+.eslintrc
+.eslintignore
+.editorconfig
+.gitattributes
+.npmignore
+.npmpackagejson
+.nycrc
+.prettierignore
+.prettierrc
+.travis.yml
+appveyor.yml
+circle.yml
+code-of-conduct.md
+codecov.yml
+contributing.md
+eslint.config.js

@@ -40,6 +40,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Build themes
+        run: pnpm run build
+
+      - name: Package extension
+        run: pnpm run package
+
       - name: Publish to VS Code Marketplace
         run: npx vsce publish --no-dependencies -p ${{ secrets.VSCE_PAT }}
         env:
