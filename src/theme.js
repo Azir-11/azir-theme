@@ -13,9 +13,13 @@ const { getColors } = require('./colors')
 
 function getTheme({ theme, name }) {
   const themes = options => options[theme] // Usage: themes({ light: "lightblue", light_high_contrast: "lightblue", light_colorblind: "lightblue", dark: "darkblue", dark_high_contrast: "darkblue", dark_colorblind: "darkblue", dark_dimmed: "royalblue" })
-  const rawColors = getColors(theme)
-  const color = changeColorToHexAlphas(rawColors)
-  const scale = color.scale // Usage: scale.blue[6]
+  const { variables, scale } = getColors(theme)
+  
+  // 辅助函数：获取变量值并确保为十六进制格式
+  const v = (varName) => {
+    const color = variables[varName] || '#000000'
+    return ensureHexColor(color)
+  }
 
   const onlyDark = (color) => {
     return themes({ dark: color, dark_high_contrast: color, dark_colorblind: color, dark_dimmed: color })
@@ -40,173 +44,173 @@ function getTheme({ theme, name }) {
   return {
     name,
     colors: {
-      'focusBorder': color.accent.emphasis,
-      'foreground': color.fg.default,
-      'descriptionForeground': color.fg.muted,
-      'errorForeground': color.danger.fg,
+      'focusBorder': v('bgColor-accent-emphasis'),
+      'foreground': v('fgColor-default'),
+      'descriptionForeground': v('fgColor-muted'),
+      'errorForeground': v('fgColor-danger'),
 
-      'textLink.foreground': color.accent.fg,
-      'textLink.activeForeground': color.accent.fg,
-      'textBlockQuote.background': color.canvas.inset,
-      'textBlockQuote.border': color.border.default,
-      'textCodeBlock.background': color.neutral.muted,
-      'textPreformat.foreground': color.fg.muted,
-      'textPreformat.background': color.neutral.muted,
-      'textSeparator.foreground': color.border.muted,
+      'textLink.foreground': v('fgColor-accent'),
+      'textLink.activeForeground': v('fgColor-accent'),
+      'textBlockQuote.background': v('bgColor-muted'),
+      'textBlockQuote.border': v('borderColor-default'),
+      'textCodeBlock.background': v('bgColor-neutral-muted'),
+      'textPreformat.foreground': v('fgColor-muted'),
+      'textPreformat.background': v('bgColor-neutral-muted'),
+      'textSeparator.foreground': v('borderColor-muted'),
 
-      'icon.foreground': color.fg.muted,
-      'keybindingLabel.foreground': color.fg.default,
+      'icon.foreground': v('fgColor-muted'),
+      'keybindingLabel.foreground': v('fgColor-default'),
 
-      'button.background': color.btn.primary.bg,
-      'button.foreground': color.btn.primary.text,
-      'button.hoverBackground': color.btn.primary.hoverBg,
+      'button.background': v('button-primary-bgColor-rest') || v('bgColor-success-emphasis'),
+      'button.foreground': v('button-primary-fgColor-rest'),
+      'button.hoverBackground': v('button-primary-bgColor-hover'),
 
-      'button.secondaryBackground': color.btn.activeBg,
-      'button.secondaryForeground': color.btn.text,
-      'button.secondaryHoverBackground': color.btn.hoverBg,
+      'button.secondaryBackground': v('button-default-bgColor-active'),
+      'button.secondaryForeground': v('button-default-fgColor-rest') || v('fgColor-default'),
+      'button.secondaryHoverBackground': v('button-default-bgColor-hover'),
 
-      'checkbox.background': color.canvas.subtle,
-      'checkbox.border': color.border.default,
+      'checkbox.background': v('bgColor-muted'),
+      'checkbox.border': v('borderColor-default'),
 
-      'dropdown.background': color.canvas.overlay,
-      'dropdown.border': color.border.default,
-      'dropdown.foreground': color.fg.default,
-      'dropdown.listBackground': color.canvas.overlay,
+      'dropdown.background': v('overlay-bgColor') || v('bgColor-default'),
+      'dropdown.border': v('borderColor-default'),
+      'dropdown.foreground': v('fgColor-default'),
+      'dropdown.listBackground': v('overlay-bgColor') || v('bgColor-default'),
 
-      'input.background': color.canvas.default,
-      'input.border': color.border.default,
-      'input.foreground': color.fg.default,
-      'input.placeholderForeground': color.fg.subtle,
+      'input.background': v('bgColor-default'),
+      'input.border': v('borderColor-default'),
+      'input.foreground': v('fgColor-default'),
+      'input.placeholderForeground': v('fgColor-muted'),
 
-      'badge.foreground': color.fg.onEmphasis,
-      'badge.background': color.accent.emphasis,
+      'badge.foreground': v('fgColor-onEmphasis'),
+      'badge.background': v('bgColor-accent-emphasis'),
 
-      'progressBar.background': color.accent.emphasis,
+      'progressBar.background': v('bgColor-accent-emphasis'),
 
-      'titleBar.activeForeground': color.fg.muted,
-      'titleBar.activeBackground': color.canvas.default,
-      'titleBar.inactiveForeground': color.fg.muted,
-      'titleBar.inactiveBackground': color.canvas.inset,
-      'titleBar.border': color.border.default,
+      'titleBar.activeForeground': v('fgColor-muted'),
+      'titleBar.activeBackground': v('bgColor-default'),
+      'titleBar.inactiveForeground': v('fgColor-muted'),
+      'titleBar.inactiveBackground': v('bgColor-muted'),
+      'titleBar.border': v('borderColor-default'),
 
-      'activityBar.foreground': color.fg.default,
-      'activityBar.inactiveForeground': color.fg.muted,
-      'activityBar.background': color.canvas.default,
-      'activityBarBadge.foreground': color.fg.onEmphasis,
-      'activityBarBadge.background': color.accent.emphasis,
-      'activityBar.activeBorder': color.primer.border.active,
-      'activityBar.border': color.border.default,
+      'activityBar.foreground': v('fgColor-default'),
+      'activityBar.inactiveForeground': v('fgColor-muted'),
+      'activityBar.background': v('bgColor-default'),
+      'activityBarBadge.foreground': v('fgColor-onEmphasis'),
+      'activityBarBadge.background': v('bgColor-accent-emphasis'),
+      'activityBar.activeBorder': v('borderColor-accent-emphasis'),
+      'activityBar.border': v('borderColor-default'),
 
-      'sideBar.foreground': color.fg.default,
-      'sideBar.background': color.canvas.inset,
-      'sideBar.border': color.border.default,
-      'sideBarTitle.foreground': color.fg.default,
-      'sideBarSectionHeader.foreground': color.fg.default,
-      'sideBarSectionHeader.background': color.canvas.inset,
-      'sideBarSectionHeader.border': color.border.default,
+      'sideBar.foreground': v('fgColor-default'),
+      'sideBar.background': v('bgColor-muted'),
+      'sideBar.border': v('borderColor-default'),
+      'sideBarTitle.foreground': v('fgColor-default'),
+      'sideBarSectionHeader.foreground': v('fgColor-default'),
+      'sideBarSectionHeader.background': v('bgColor-muted'),
+      'sideBarSectionHeader.border': v('borderColor-default'),
 
-      'list.hoverForeground': color.fg.default,
-      'list.inactiveSelectionForeground': color.fg.default,
-      'list.activeSelectionForeground': color.fg.default,
-      'list.hoverBackground': color.neutral.subtle,
-      'list.inactiveSelectionBackground': color.neutral.muted,
-      'list.activeSelectionBackground': color.neutral.muted,
-      'list.focusForeground': color.fg.default,
-      'list.focusBackground': color.accent.subtle,
-      'list.inactiveFocusBackground': color.accent.subtle,
-      'list.highlightForeground': color.accent.fg,
+      'list.hoverForeground': v('fgColor-default'),
+      'list.inactiveSelectionForeground': v('fgColor-default'),
+      'list.activeSelectionForeground': v('fgColor-default'),
+      'list.hoverBackground': v('bgColor-neutral-muted'),
+      'list.inactiveSelectionBackground': v('bgColor-neutral-muted'),
+      'list.activeSelectionBackground': v('bgColor-neutral-muted'),
+      'list.focusForeground': v('fgColor-default'),
+      'list.focusBackground': v('bgColor-accent-muted'),
+      'list.inactiveFocusBackground': v('bgColor-accent-muted'),
+      'list.highlightForeground': v('fgColor-accent'),
 
-      'tree.indentGuidesStroke': color.border.muted,
+      'tree.indentGuidesStroke': v('borderColor-muted'),
 
-      'notificationCenterHeader.foreground': color.fg.muted,
-      'notificationCenterHeader.background': color.canvas.subtle,
-      'notifications.foreground': color.fg.default,
-      'notifications.background': color.canvas.overlay,
-      'notifications.border': color.border.default,
-      'notificationsErrorIcon.foreground': color.danger.fg,
-      'notificationsWarningIcon.foreground': color.attention.fg,
-      'notificationsInfoIcon.foreground': color.accent.fg,
+      'notificationCenterHeader.foreground': v('fgColor-muted'),
+      'notificationCenterHeader.background': v('bgColor-muted'),
+      'notifications.foreground': v('fgColor-default'),
+      'notifications.background': v('overlay-bgColor') || v('bgColor-default'),
+      'notifications.border': v('borderColor-default'),
+      'notificationsErrorIcon.foreground': v('fgColor-danger'),
+      'notificationsWarningIcon.foreground': v('fgColor-attention'),
+      'notificationsInfoIcon.foreground': v('fgColor-accent'),
 
-      'pickerGroup.border': color.border.default,
-      'pickerGroup.foreground': color.fg.muted,
-      'quickInput.background': color.canvas.overlay,
-      'quickInput.foreground': color.fg.default,
+      'pickerGroup.border': v('borderColor-default'),
+      'pickerGroup.foreground': v('fgColor-muted'),
+      'quickInput.background': v('overlay-bgColor') || v('bgColor-default'),
+      'quickInput.foreground': v('fgColor-default'),
 
-      'statusBar.foreground': color.fg.muted,
-      'statusBar.background': color.canvas.default,
-      'statusBar.border': color.border.default,
-      'statusBar.focusBorder': alpha(color.accent.emphasis, 0.5),
-      'statusBar.noFolderBackground': color.canvas.default,
-      'statusBar.debuggingForeground': color.fg.onEmphasis,
-      'statusBar.debuggingBackground': color.danger.emphasis,
-      'statusBarItem.prominentBackground': color.neutral.muted,
-      'statusBarItem.remoteForeground': color.fg.default,
-      'statusBarItem.remoteBackground': lightDark(color.scale.gray[1], color.scale.gray[6]),
-      'statusBarItem.hoverBackground': alpha(color.fg.default, 0.08),
-      'statusBarItem.activeBackground': alpha(color.fg.default, 0.12),
-      'statusBarItem.focusBorder': color.accent.emphasis,
+      'statusBar.foreground': v('fgColor-muted'),
+      'statusBar.background': v('bgColor-default'),
+      'statusBar.border': v('borderColor-default'),
+      'statusBar.focusBorder': alpha(v('bgColor-accent-emphasis'), 0.5),
+      'statusBar.noFolderBackground': v('bgColor-default'),
+      'statusBar.debuggingForeground': v('fgColor-onEmphasis'),
+      'statusBar.debuggingBackground': v('bgColor-danger-emphasis'),
+      'statusBarItem.prominentBackground': v('bgColor-neutral-muted'),
+      'statusBarItem.remoteForeground': v('fgColor-default'),
+      'statusBarItem.remoteBackground': lightDark(scale.gray[1], scale.gray[6]),
+      'statusBarItem.hoverBackground': alpha(v('fgColor-default'), 0.08),
+      'statusBarItem.activeBackground': alpha(v('fgColor-default'), 0.12),
+      'statusBarItem.focusBorder': v('bgColor-accent-emphasis'),
 
-      'editorGroupHeader.tabsBackground': color.canvas.inset,
-      'editorGroupHeader.tabsBorder': color.border.default,
-      'editorGroup.border': color.border.default,
+      'editorGroupHeader.tabsBackground': v('bgColor-muted'),
+      'editorGroupHeader.tabsBorder': v('borderColor-default'),
+      'editorGroup.border': v('borderColor-default'),
 
-      'tab.activeForeground': color.fg.default,
-      'tab.inactiveForeground': color.fg.muted,
-      'tab.inactiveBackground': color.canvas.inset,
-      'tab.activeBackground': color.canvas.default,
-      'tab.hoverBackground': color.canvas.default,
-      'tab.unfocusedHoverBackground': color.neutral.subtle,
-      'tab.border': color.border.default,
-      'tab.unfocusedActiveBorderTop': color.border.default,
-      'tab.activeBorder': color.canvas.default,
-      'tab.unfocusedActiveBorder': color.canvas.default,
-      'tab.activeBorderTop': color.primer.border.active,
+      'tab.activeForeground': v('fgColor-default'),
+      'tab.inactiveForeground': v('fgColor-muted'),
+      'tab.inactiveBackground': v('bgColor-muted'),
+      'tab.activeBackground': v('bgColor-default'),
+      'tab.hoverBackground': v('bgColor-default'),
+      'tab.unfocusedHoverBackground': v('bgColor-neutral-muted'),
+      'tab.border': v('borderColor-default'),
+      'tab.unfocusedActiveBorderTop': v('borderColor-default'),
+      'tab.activeBorder': v('bgColor-default'),
+      'tab.unfocusedActiveBorder': v('bgColor-default'),
+      'tab.activeBorderTop': v('borderColor-accent-emphasis'),
 
-      'breadcrumb.foreground': color.fg.muted,
-      'breadcrumb.focusForeground': color.fg.default,
-      'breadcrumb.activeSelectionForeground': color.fg.muted,
-      'breadcrumbPicker.background': color.canvas.overlay,
+      'breadcrumb.foreground': v('fgColor-muted'),
+      'breadcrumb.focusForeground': v('fgColor-default'),
+      'breadcrumb.activeSelectionForeground': v('fgColor-muted'),
+      'breadcrumbPicker.background': v('overlay-bgColor') || v('bgColor-default'),
 
-      'editor.foreground': color.fg.default,
-      'editor.background': color.canvas.default,
-      'editorWidget.background': color.canvas.overlay,
-      'editor.foldBackground': alpha(color.neutral.emphasis, 0.1),
-      'editor.lineHighlightBackground': color.codemirror.activelineBg,
-      'editor.lineHighlightBorder': onlyDarkHighContrast(color.accent.fg),
+      'editor.foreground': v('fgColor-default'),
+      'editor.background': v('bgColor-default'),
+      'editorWidget.background': v('overlay-bgColor') || v('bgColor-default'),
+      'editor.foldBackground': alpha(v('bgColor-neutral-emphasis'), 0.1),
+      'editor.lineHighlightBackground': v('codeMirror-activeline-bgColor') || 'rgba(175,184,193,0.2)',
+      'editor.lineHighlightBorder': onlyDarkHighContrast(v('fgColor-accent')),
       'editorLineNumber.foreground': lightDark(scale.gray[4], scale.gray[4]),
-      'editorLineNumber.activeForeground': color.fg.default,
-      'editorIndentGuide.background': alpha(color.fg.default, 0.12),
-      'editorIndentGuide.activeBackground': alpha(color.fg.default, 0.24),
+      'editorLineNumber.activeForeground': v('fgColor-default'),
+      'editorIndentGuide.background': alpha(v('fgColor-default'), 0.12),
+      'editorIndentGuide.activeBackground': alpha(v('fgColor-default'), 0.24),
       'editorWhitespace.foreground': lightDark(scale.gray[3], scale.gray[5]),
-      'editorCursor.foreground': color.accent.fg,
+      'editorCursor.foreground': v('fgColor-accent'),
 
-      'editor.findMatchBackground': color.attention.emphasis,
+      'editor.findMatchBackground': v('bgColor-attention-emphasis'),
       'editor.findMatchHighlightBackground': alpha(scale.yellow[1], 0.5),
-      'editor.linkedEditingBackground': alpha(color.accent.fg, 0.07),
-      'editor.inactiveSelectionBackground': alpha(color.accent.fg, 0.07),
-      'editor.selectionBackground': alpha(color.accent.fg, 0.2),
+      'editor.linkedEditingBackground': alpha(v('fgColor-accent'), 0.07),
+      'editor.inactiveSelectionBackground': alpha(v('fgColor-accent'), 0.07),
+      'editor.selectionBackground': alpha(v('fgColor-accent'), 0.2),
       'editor.selectionHighlightBackground': alpha(scale.green[3], 0.25),
-      'editor.wordHighlightBackground': alpha(color.neutral.subtle, 0.5),
-      'editor.wordHighlightBorder': alpha(color.neutral.muted, 0.6),
-      'editor.wordHighlightStrongBackground': alpha(color.neutral.muted, 0.3),
-      'editor.wordHighlightStrongBorder': alpha(color.neutral.muted, 0.6),
+      'editor.wordHighlightBackground': alpha(v('bgColor-neutral-muted'), 0.5),
+      'editor.wordHighlightBorder': alpha(v('bgColor-neutral-muted'), 0.6),
+      'editor.wordHighlightStrongBackground': alpha(v('bgColor-neutral-muted'), 0.3),
+      'editor.wordHighlightStrongBorder': alpha(v('bgColor-neutral-muted'), 0.6),
       'editorBracketMatch.background': alpha(scale.green[3], 0.25),
       'editorBracketMatch.border': alpha(scale.green[3], 0.6),
       // text selection for High Contrast themes
-      'editor.selectionForeground': onlyHighContrast(color.fg.onEmphasis),
-      'editor.selectionBackground': onlyHighContrast(color.neutral.emphasisPlus),
-      'editor.inactiveSelectionBackground': onlyHighContrast(color.neutral.emphasis),
+      'editor.selectionForeground': onlyHighContrast(v('fgColor-onEmphasis')),
+      'editor.selectionBackground': onlyHighContrast(v('bgColor-emphasis')),
+      'editor.inactiveSelectionBackground': onlyHighContrast(v('bgColor-neutral-emphasis')),
 
       'editorInlayHint.background': alpha(scale.gray[3], 0.2),
-      'editorInlayHint.foreground': color.fg.muted,
+      'editorInlayHint.foreground': v('fgColor-muted'),
       'editorInlayHint.typeBackground': alpha(scale.gray[3], 0.2),
-      'editorInlayHint.typeForeground': color.fg.muted,
+      'editorInlayHint.typeForeground': v('fgColor-muted'),
       'editorInlayHint.paramBackground': alpha(scale.gray[3], 0.2),
-      'editorInlayHint.paramForeground': color.fg.muted,
+      'editorInlayHint.paramForeground': v('fgColor-muted'),
 
-      'editorGutter.modifiedBackground': color.attention.muted,
-      'editorGutter.addedBackground': color.success.muted,
-      'editorGutter.deletedBackground': color.danger.muted,
+      'editorGutter.modifiedBackground': v('bgColor-attention-muted'),
+      'editorGutter.addedBackground': v('bgColor-success-muted'),
+      'editorGutter.deletedBackground': v('bgColor-danger-muted'),
 
       'diffEditor.insertedLineBackground': lightDark(alpha(scale.green[1], 0.3), alpha(scale.green[5], 0.15)),
       'diffEditor.insertedTextBackground': lightDark(alpha(scale.green[2], 0.5), alpha(scale.green[3], 0.3)),
@@ -223,14 +227,14 @@ function getTheme({ theme, name }) {
       'minimapSlider.hoverBackground': lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
       'minimapSlider.activeBackground': lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
 
-      'panel.background': color.canvas.inset,
-      'panel.border': color.border.default,
-      'panelTitle.activeBorder': color.primer.border.active,
-      'panelTitle.activeForeground': color.fg.default,
-      'panelTitle.inactiveForeground': color.fg.muted,
-      'panelInput.border': color.border.default,
+      'panel.background': v('bgColor-muted'),
+      'panel.border': v('borderColor-default'),
+      'panelTitle.activeBorder': v('borderColor-accent-emphasis'),
+      'panelTitle.activeForeground': v('fgColor-default'),
+      'panelTitle.inactiveForeground': v('fgColor-muted'),
+      'panelInput.border': v('borderColor-default'),
 
-      'debugIcon.breakpointForeground': color.danger.fg,
+      'debugIcon.breakpointForeground': v('fgColor-danger'),
 
       'debugConsole.infoForeground': lightDark(scale.gray[6], scale.gray[3]),
       'debugConsole.warningForeground': lightDark(scale.yellow[6], scale.yellow[3]),
@@ -279,23 +283,23 @@ function getTheme({ theme, name }) {
       'symbolIcon.variableForeground': lightDark(scale.orange[6], scale.orange[3]),
       'symbolIcon.constantForeground': lightDark(scale.green[6], scale.green),
 
-      'terminal.foreground': color.fg.default,
-      'terminal.ansiBlack': color.ansi.black,
-      'terminal.ansiRed': color.ansi.red,
-      'terminal.ansiGreen': color.ansi.green,
-      'terminal.ansiYellow': color.ansi.yellow,
-      'terminal.ansiBlue': color.ansi.blue,
-      'terminal.ansiMagenta': color.ansi.magenta,
-      'terminal.ansiCyan': color.ansi.cyan,
-      'terminal.ansiWhite': color.ansi.white,
-      'terminal.ansiBrightBlack': color.ansi.blackBright,
-      'terminal.ansiBrightRed': color.ansi.redBright,
-      'terminal.ansiBrightGreen': color.ansi.greenBright,
-      'terminal.ansiBrightYellow': color.ansi.yellowBright,
-      'terminal.ansiBrightBlue': color.ansi.blueBright,
-      'terminal.ansiBrightMagenta': color.ansi.magentaBright,
-      'terminal.ansiBrightCyan': color.ansi.cyanBright,
-      'terminal.ansiBrightWhite': color.ansi.whiteBright,
+      'terminal.foreground': v('fgColor-default'),
+      'terminal.ansiBlack': v('color-ansi-black'),
+      'terminal.ansiRed': v('color-ansi-red'),
+      'terminal.ansiGreen': v('color-ansi-green'),
+      'terminal.ansiYellow': v('color-ansi-yellow'),
+      'terminal.ansiBlue': v('color-ansi-blue'),
+      'terminal.ansiMagenta': v('color-ansi-magenta'),
+      'terminal.ansiCyan': v('color-ansi-cyan'),
+      'terminal.ansiWhite': v('color-ansi-white'),
+      'terminal.ansiBrightBlack': v('color-ansi-black-bright'),
+      'terminal.ansiBrightRed': v('color-ansi-red-bright'),
+      'terminal.ansiBrightGreen': v('color-ansi-green-bright'),
+      'terminal.ansiBrightYellow': v('color-ansi-yellow-bright'),
+      'terminal.ansiBrightBlue': v('color-ansi-blue-bright'),
+      'terminal.ansiBrightMagenta': v('color-ansi-magenta-bright'),
+      'terminal.ansiBrightCyan': v('color-ansi-cyan-bright'),
+      'terminal.ansiBrightWhite': v('color-ansi-white-bright'),
 
       'editorBracketHighlight.foreground1': lightDark(scale.blue[5], scale.blue[2]),
       'editorBracketHighlight.foreground2': lightDark(scale.green[5], scale.green[2]),
@@ -303,29 +307,29 @@ function getTheme({ theme, name }) {
       'editorBracketHighlight.foreground4': lightDark(scale.red[5], scale.red[2]),
       'editorBracketHighlight.foreground5': lightDark(scale.pink[5], scale.pink[2]),
       'editorBracketHighlight.foreground6': lightDark(scale.purple[5], scale.purple[2]),
-      'editorBracketHighlight.unexpectedBracket.foreground': color.fg.muted, // gray
+      'editorBracketHighlight.unexpectedBracket.foreground': v('fgColor-muted'), // gray
 
-      'gitDecoration.addedResourceForeground': color.success.fg,
-      'gitDecoration.modifiedResourceForeground': color.attention.fg,
-      'gitDecoration.deletedResourceForeground': color.danger.fg,
-      'gitDecoration.untrackedResourceForeground': color.success.fg,
-      'gitDecoration.ignoredResourceForeground': color.fg.subtle,
-      'gitDecoration.conflictingResourceForeground': color.severe.fg,
-      'gitDecoration.submoduleResourceForeground': color.fg.muted,
+      'gitDecoration.addedResourceForeground': v('fgColor-success'),
+      'gitDecoration.modifiedResourceForeground': v('fgColor-attention'),
+      'gitDecoration.deletedResourceForeground': v('fgColor-danger'),
+      'gitDecoration.untrackedResourceForeground': v('fgColor-success'),
+      'gitDecoration.ignoredResourceForeground': v('fgColor-muted'),
+      'gitDecoration.conflictingResourceForeground': v('fgColor-severe'),
+      'gitDecoration.submoduleResourceForeground': v('fgColor-muted'),
 
-      'debugToolBar.background': color.canvas.overlay,
-      'editor.stackFrameHighlightBackground': color.attention.muted,
-      'editor.focusedStackFrameHighlightBackground': color.success.muted,
+      'debugToolBar.background': v('overlay-bgColor') || v('bgColor-default'),
+      'editor.stackFrameHighlightBackground': v('bgColor-attention-muted'),
+      'editor.focusedStackFrameHighlightBackground': v('bgColor-success-muted'),
 
-      'peekViewEditor.matchHighlightBackground': onlyDark(color.attention.muted),
-      'peekViewResult.matchHighlightBackground': onlyDark(color.attention.muted),
-      'peekViewEditor.background': onlyDark(color.neutral.subtle),
+      'peekViewEditor.matchHighlightBackground': onlyDark(v('bgColor-attention-muted')),
+      'peekViewResult.matchHighlightBackground': onlyDark(v('bgColor-attention-muted')),
+      'peekViewEditor.background': onlyDark(v('bgColor-neutral-muted')),
       'peekViewResult.background': onlyDark(scale.gray[9]),
 
-      'settings.headerForeground': color.fg.default,
-      'settings.modifiedItemIndicator': color.attention.muted,
-      'welcomePage.buttonBackground': color.btn.bg,
-      'welcomePage.buttonHoverBackground': color.btn.hoverBg,
+      'settings.headerForeground': v('fgColor-default'),
+      'settings.modifiedItemIndicator': v('bgColor-attention-muted'),
+      'welcomePage.buttonBackground': v('button-default-bgColor-rest'),
+      'welcomePage.buttonHoverBackground': v('button-default-bgColor-hover'),
     },
     semanticHighlighting: true,
     tokenColors: [
@@ -377,7 +381,7 @@ function getTheme({ theme, name }) {
           'meta.embedded.expression',
         ],
         settings: {
-          foreground: color.fg.default,
+          foreground: v('fgColor-default'),
         },
       },
       {
@@ -440,7 +444,7 @@ function getTheme({ theme, name }) {
           'storage.type.java',
         ],
         settings: {
-          foreground: color.fg.default,
+          foreground: v('fgColor-default'),
         },
       },
       {
@@ -470,7 +474,7 @@ function getTheme({ theme, name }) {
           'string variable',
         ],
         settings: {
-          foreground: color.fg.default,
+          foreground: v('fgColor-default'),
         },
       },
       {
@@ -603,14 +607,14 @@ function getTheme({ theme, name }) {
         scope: 'markup.italic',
         settings: {
           fontStyle: 'italic',
-          foreground: color.fg.default,
+          foreground: v('fgColor-default'),
         },
       },
       {
         scope: 'markup.bold',
         settings: {
           fontStyle: 'bold',
-          foreground: color.fg.default,
+          foreground: v('fgColor-default'),
         },
       },
       {
@@ -728,24 +732,13 @@ function getTheme({ theme, name }) {
   }
 }
 
-// Convert to hex
+// Convert colors to hex format if needed
 // VS Code doesn't support other formats like hsl, rgba etc.
-
-function changeColorToHexAlphas(obj) {
-  if (typeof obj === 'object') {
-    for (const keys in obj) {
-      if (typeof obj[keys] === 'object') {
-        changeColorToHexAlphas(obj[keys])
-      }
-      else {
-        const keyValue = obj[keys]
-        if (chroma.valid(keyValue)) {
-          obj[keys] = chroma(keyValue).hex()
-        }
-      }
-    }
+function ensureHexColor(color) {
+  if (chroma.valid(color)) {
+    return chroma(color).hex()
   }
-  return obj
+  return color
 }
 
 module.exports = getTheme

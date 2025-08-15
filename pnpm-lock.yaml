@@ -18,8 +18,8 @@ importers:
         specifier: ^2.17.0
         version: 2.29.5
       '@primer/primitives':
-        specifier: 7.10.0
-        version: 7.10.0
+        specifier: 11.1.0
+        version: 11.1.0
       chroma-js:
         specifier: ^2.1.2
         version: 2.6.0
@@ -294,8 +294,8 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@primer/primitives@7.10.0':
-    resolution: {integrity: sha512-DdLHq21e93R9qDHyRuRpytBLY0Up9IwNWMOUgPNW6lRSng4N4+IdUlLS3Ekbasmxfs8Z8vKS8aezeYovQ5qsxQ==}
+  '@primer/primitives@11.1.0':
+    resolution: {integrity: sha512-edsofzVG67EobXGRrqFc/kfjzKh8wbq1wEmRc1vmRNqDJNMxBRWZ9bT2AzKvcv+Hbf7olDAPkrSqVHbO4hhr/A==}
 
   '@stylistic/eslint-plugin@5.2.3':
     resolution: {integrity: sha512-oY7GVkJGVMI5benlBDCaRrSC1qPasafyv5dOBLLv5MTilMGnErKhO6ziEfodDDIZbo5QxPUNW360VudJOFODMw==}
@@ -2451,7 +2451,7 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@primer/primitives@7.10.0': {}
+  '@primer/primitives@11.1.0': {}
 
   '@stylistic/eslint-plugin@5.2.3(eslint@9.33.0)':
     dependencies:
