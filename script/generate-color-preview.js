@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { loadRawVariablesFromCSS, colorGroups } = require('./shared')
+const { loadRawVariablesFromCSS, colorGroups } = require('../src/shared')
 
 // 检查颜色是否为有效的十六进制颜色
 function isValidColor(color) {
@@ -434,7 +434,7 @@ function generateColorPreview() {
     const html = generateHTML(lightColors, darkColors)
     
     // 写入文件
-    const outputPath = path.join(__dirname, '../color-preview.html')
+    const outputPath = path.join(__dirname, './color-preview.html')
     fs.writeFileSync(outputPath, html, 'utf8')
     
     console.log(`✅ 颜色预览页面已生成: ${outputPath}`)
