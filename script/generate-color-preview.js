@@ -15,8 +15,9 @@ function isValidColor(color) {
 // 根据变量名提取子组前缀
 function getSubgroupPrefix(varName) {
   const parts = varName.split('-')
+  // 对于像 fgColor-attention 这样的变量，只取第一个部分作为子组前缀
   if (parts.length >= 2) {
-    return `${parts[0]}-${parts[1]}`
+    return parts[0]
   }
   return parts[0]
 }
@@ -91,13 +92,7 @@ function generateHTML(lightColors, darkColors) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Primer Primitives 颜色预览</title>
-    <script>
-        // 颜色数据
-        window.colorData = {
-            light: ${JSON.stringify(lightColors)},
-            dark: ${JSON.stringify(darkColors)}
-        };
-    </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <style>
         * {
             margin: 0;
@@ -117,6 +112,10 @@ function generateHTML(lightColors, darkColors) {
             margin: 0 auto;
             padding: 20px;
         }
+            
+        .dark-theme #app {
+            background: #161b22;
+        }
         
         .header {
             text-align: center;
@@ -127,18 +126,87 @@ function generateHTML(lightColors, darkColors) {
             border-radius: 12px;
         }
         
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .control-panel {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 16px;
+            min-width: 250px;
+        }
+        
+        .dark-theme .control-panel {
+            background: #161b22;
+        }
+        
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #d0d7de;
+        }
+        
+        .dark-theme .panel-header {
+            border-bottom-color: #30363d;
+        }
+        
+        .panel-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #24292f;
+        }
+        
+        .dark-theme .panel-title {
+            color: #f0f6fc;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #656d76;
+        }
+        
+        .dark-theme .close-btn {
+            color: #8b949e;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+        
+        .dark-theme .search-box {
+            background: #0d1117;
+            border-color: #30363d;
+            color: #f0f6fc;
+        }
+        
         .theme-switcher {
-            text-align: center;
-            margin-bottom: 30px;
+            display: flex;
+            gap: 8px;
         }
         
         .theme-btn {
-            padding: 10px 20px;
-            margin: 0 10px;
+            flex: 1;
+            padding: 8px 12px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: all 0.3s ease;
         }
         
@@ -152,17 +220,30 @@ function generateHTML(lightColors, darkColors) {
             color: #24292f;
         }
         
+        .dark-theme .theme-btn:not(.active) {
+            background: #21262d;
+            color: #f0f6fc;
+        }
+        
         .theme-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
-        .theme-content {
-            display: none;
-        }
-        
-        .theme-content.active {
-            display: block;
+        .toggle-panel-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #0969da;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 999;
         }
         
         .color-group {
@@ -173,10 +254,19 @@ function generateHTML(lightColors, darkColors) {
             overflow: hidden;
         }
         
+        .dark-theme .color-group {
+            background: #161b22;
+        }
+        
         .group-header {
             background: #f6f8fa;
             padding: 16px 20px;
             border-bottom: 1px solid #d0d7de;
+        }
+        
+        .dark-theme .group-header {
+            background: #21262d;
+            border-bottom-color: #30363d;
         }
         
         .group-title {
@@ -185,11 +275,19 @@ function generateHTML(lightColors, darkColors) {
             color: #24292f;
         }
         
+        .dark-theme .group-title {
+            color: #f0f6fc;
+        }
+        
         .color-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1px;
             background: #d0d7de;
+        }
+        
+        .dark-theme .color-grid {
+            background: #30363d;
         }
         
         .color-item {
@@ -201,8 +299,16 @@ function generateHTML(lightColors, darkColors) {
             transition: background-color 0.2s ease;
         }
         
+        .dark-theme .color-item {
+            background: #161b22;
+        }
+        
         .color-item:hover {
             background: #f6f8fa;
+        }
+        
+        .dark-theme .color-item:hover {
+            background: #21262d;
         }
         
         .color-swatch {
@@ -213,6 +319,10 @@ function generateHTML(lightColors, darkColors) {
             flex-shrink: 0;
             position: relative;
             cursor: pointer;
+        }
+        
+        .dark-theme .color-swatch {
+            border-color: #30363d;
         }
         
         .color-info {
@@ -229,6 +339,10 @@ function generateHTML(lightColors, darkColors) {
             word-break: break-all;
         }
         
+        .dark-theme .color-name {
+            color: #f0f6fc;
+        }
+        
         .color-value {
             font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
             font-size: 12px;
@@ -240,14 +354,23 @@ function generateHTML(lightColors, darkColors) {
             display: inline-block;
         }
         
+        .dark-theme .color-value {
+            background: #21262d;
+            color: #8b949e;
+        }
+        
         .color-value:hover {
             background: #e1e4e8;
+        }
+        
+        .dark-theme .color-value:hover {
+            background: #30363d;
         }
         
         .copy-feedback {
             position: fixed;
             top: 20px;
-            right: 20px;
+            right: 60px;
             background: #28a745;
             color: white;
             padding: 12px 20px;
@@ -273,68 +396,20 @@ function generateHTML(lightColors, darkColors) {
             color: #656d76;
         }
         
-        /* 暗色主题样式 */
-        .dark-theme {
-            background: #0d1117;
-            color: #f0f6fc;
-        }
-        
-        .dark-theme .color-group {
-            background: #161b22;
-        }
-        
-        .dark-theme .group-header {
-            background: #21262d;
-            border-bottom-color: #30363d;
-        }
-        
-        .dark-theme .group-title {
-            color: #f0f6fc;
-        }
-        
-        .dark-theme .color-grid {
-            background: #30363d;
-        }
-        
-        .dark-theme .color-item {
-            background: #161b22;
-        }
-        
-        .dark-theme .color-item:hover {
-            background: #21262d;
-        }
-        
-        .dark-theme .color-name {
-            color: #f0f6fc;
-        }
-        
-        .dark-theme .color-value {
-            background: #21262d;
-            color: #8b949e;
-        }
-        
-        .dark-theme .color-value:hover {
-            background: #30363d;
-        }
-        
         .dark-theme .stats {
             background: #21262d;
             color: #8b949e;
         }
         
         /* 子分组样式 */
-        .subgroup {
-            margin-bottom: 24px;
-        }
-        
         .subgroup-header {
             padding: 8px 16px;
             background: #f1f3f4;
             border-left: 3px solid #0969da;
-            margin-bottom: 8px;
             font-size: 14px;
             font-weight: 500;
             color: #24292f;
+            cursor: pointer;
         }
         
         .dark-theme .subgroup-header {
@@ -360,178 +435,330 @@ function generateHTML(lightColors, darkColors) {
         .subgroup.collapsed .subgroup-colors {
             display: none;
         }
+        
+        /* 隐藏类 */
+        .hidden {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🎨 GitHub Primer Primitives 颜色预览</h1>
-            <p>浏览和复制所有可用的设计令牌颜色变量</p>
-        </div>
-        
-        <div class="theme-switcher">
-            <button class="theme-btn active" onclick="switchTheme('light')">Light Theme</button>
-            <button class="theme-btn" onclick="switchTheme('dark')">Dark Theme</button>
-        </div>
-        
-        <div id="theme-container">
-            <!-- 颜色内容将通过 JavaScript 动态生成 -->
-        </div>
-        
-        <div class="stats" id="stats-container">
-            <!-- 统计信息将通过 JavaScript 动态生成 -->
-        </div>
-    </div>
-    
-    <div id="copy-feedback" class="copy-feedback">已复制到剪贴板！</div>
-    
-    <script>
-        let currentTheme = 'light';
-        
-        // 复制到剪贴板
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                showCopyFeedback();
-            }).catch(err => {
-                console.error('Failed to copy: ', err);
-            });
-        }
-        
-        // 显示复制反馈
-        function showCopyFeedback() {
-            const feedback = document.getElementById('copy-feedback');
-            feedback.classList.add('show');
-            setTimeout(() => {
-                feedback.classList.remove('show');
-            }, 2000);
-        }
-        
-        // 切换子分组显示/隐藏
-        function toggleSubgroup(subgroupId) {
-            const subgroup = document.getElementById(subgroupId);
-            subgroup.classList.toggle('collapsed');
-        }
-        
-        // 渲染颜色项
-        function renderColorItem(color) {
-            return \`
-                <div class="color-item">
-                    <div class="color-swatch" 
-                         style="background-color: \${color.value};" 
-                         data-color="\${color.value}"
-                         onclick="copyToClipboard('\${color.value}')"
-                         title="点击复制颜色值"></div>
-                    <div class="color-info">
-                        <div class="color-name" 
-                             onclick="copyToClipboard('\${color.name}')"
-                             title="点击复制变量名">\${color.cssVar}</div>
-                        <div class="color-value" 
-                             onclick="copyToClipboard('\${color.value}')"
-                             title="点击复制颜色值">\${color.value}</div>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <h1>🎨 GitHub Primer Primitives 颜色预览</h1>
+                <p>浏览和复制所有可用的设计令牌颜色变量</p>
+            </div>
+            
+            <button 
+                class="toggle-panel-btn" 
+                @click="togglePanel"
+                title="打开控制面板"
+            >
+                ⚙️
+            </button>
+            
+            <div class="controls" v-show="showPanel">
+                <div class="control-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">控制面板</div>
+                        <button class="close-btn" @click="togglePanel">×</button>
+                    </div>
+                    <input 
+                        type="text" 
+                        class="search-box" 
+                        v-model="searchKeyword" 
+                        placeholder="搜索颜色名称或值..."
+                    />
+                    <div class="theme-switcher">
+                        <button 
+                            class="theme-btn" 
+                            :class="{ active: currentTheme === 'light' }"
+                            @click="switchTheme('light')"
+                        >
+                            Light
+                        </button>
+                        <button 
+                            class="theme-btn" 
+                            :class="{ active: currentTheme === 'dark' }"
+                            @click="switchTheme('dark')"
+                        >
+                            Dark
+                        </button>
                     </div>
                 </div>
-            \`;
-        }
-        
-        // 渲染子分组
-        function renderSubgroup(subgroupKey, colors, groupKey) {
-            const subgroupId = \`subgroup-\${groupKey}-\${subgroupKey}\`;
-            const colorItemsHtml = colors.map(color => renderColorItem(color)).join('');
+            </div>
             
-            return \`
-                <div class="subgroup" id="\${subgroupId}">
-                    <div class="subgroup-header">
-                        <span class="subgroup-toggle" onclick="toggleSubgroup('\${subgroupId}')">
-                            \${subgroupKey} (\${colors.length} 个)
-                        </span>
+            <div id="theme-container">
+                <div 
+                    v-for="(group, groupKey) in filteredColorData" 
+                    :key="groupKey" 
+                    class="color-group"
+                    v-show="group.colors.length > 0"
+                >
+                    <div class="group-header">
+                        <h2 class="group-title">{{ group.title }} ({{ group.colors.length }} 个)</h2>
                     </div>
-                    <div class="subgroup-colors">
+                    
+                    <div v-if="Object.keys(group.subgroups).length > 1">
+                        <div 
+                            v-for="(subgroupColors, subgroupKey) in group.subgroups" 
+                            :key="subgroupKey" 
+                            class="subgroup" 
+                            :id="'subgroup-' + groupKey + '-' + subgroupKey"
+                            v-show="subgroupColors.length > 0"
+                        >
+                            <div class="subgroup-header" @click="toggleSubgroup(groupKey, subgroupKey)">
+                                <span class="subgroup-toggle">
+                                    {{ subgroupKey }} ({{ subgroupColors.length }} 个)
+                                </span>
+                            </div>
+                            <div class="subgroup-colors">
+                                <div class="color-grid">
+                                    <div 
+                                        v-for="color in subgroupColors" 
+                                        :key="color.name" 
+                                        class="color-item"
+                                    >
+                                        <div 
+                                            class="color-swatch" 
+                                            :style="{ backgroundColor: color.value }"
+                                            :data-color="color.value"
+                                            @click="copyToClipboard(color.value)"
+                                            title="点击复制颜色值"
+                                        ></div>
+                                        <div class="color-info">
+                                            <div 
+                                                class="color-name" 
+                                                @click="copyToClipboard(color.name)"
+                                                title="点击复制变量名"
+                                            >
+                                                {{ color.cssVar }}
+                                            </div>
+                                            <div 
+                                                class="color-value" 
+                                                @click="copyToClipboard(color.value)"
+                                                title="点击复制颜色值"
+                                            >
+                                                {{ color.value }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div v-else>
                         <div class="color-grid">
-                            \${colorItemsHtml}
+                            <div 
+                                v-for="color in group.colors" 
+                                :key="color.name" 
+                                class="color-item"
+                            >
+                                <div 
+                                    class="color-swatch" 
+                                    :style="{ backgroundColor: color.value }"
+                                    :data-color="color.value"
+                                    @click="copyToClipboard(color.value)"
+                                    title="点击复制颜色值"
+                                ></div>
+                                <div class="color-info">
+                                    <div 
+                                        class="color-name" 
+                                        @click="copyToClipboard(color.name)"
+                                        title="点击复制变量名"
+                                    >
+                                        {{ color.cssVar }}
+                                    </div>
+                                    <div 
+                                        class="color-value" 
+                                        @click="copyToClipboard(color.value)"
+                                        title="点击复制颜色值"
+                                    >
+                                        {{ color.value }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            \`;
-        }
-        
-        // 渲染颜色组
-        function renderColorGroup(groupKey, group) {
-            const subgroups = group.subgroups || {};
-            const subgroupKeys = Object.keys(subgroups);
+            </div>
             
-            let contentHtml = '';
-            
-            if (subgroupKeys.length > 1) {
-                // 如果有多个子分组，按子分组显示
-                contentHtml = subgroupKeys
-                    .sort()
-                    .map(subgroupKey => renderSubgroup(subgroupKey, subgroups[subgroupKey], groupKey))
-                    .join('');
-            } else {
-                // 如果只有一个子分组或没有子分组，直接显示所有颜色
-                contentHtml = \`
-                    <div class="color-grid">
-                        \${group.colors.map(color => renderColorItem(color)).join('')}
-                    </div>
-                \`;
-            }
-            
-            return \`
-                <div class="color-group">
-                    <div class="group-header">
-                        <h2 class="group-title">\${group.title} (\${group.colors.length} 个)</h2>
-                    </div>
-                    \${contentHtml}
-                </div>
-            \`;
-        }
-        
-        // 渲染主题内容
-        function renderTheme(theme) {
-            const themeData = window.colorData[theme];
-            const container = document.getElementById('theme-container');
-            
-            let html = '';
-            for (const [groupKey, group] of Object.entries(themeData)) {
-                html += renderColorGroup(groupKey, group);
-            }
-            
-            container.innerHTML = html;
-            
-            // 更新统计信息
-            const totalColors = Object.values(themeData).reduce((total, group) => total + group.colors.length, 0);
-            const statsContainer = document.getElementById('stats-container');
-            statsContainer.innerHTML = \`
-                <p>当前主题: \${totalColors} 个颜色变量</p>
+            <div class="stats">
+                <p>当前主题: {{ totalColors }} 个颜色变量</p>
                 <p>点击颜色块、颜色值或变量名可复制到剪贴板</p>
-            \`;
-        }
+            </div>
+        </div>
         
-        // 切换主题
-        function switchTheme(theme) {
-            currentTheme = theme;
-            
-            // 更新按钮状态
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // 更新页面主题
-            if (theme === 'dark') {
-                document.body.classList.add('dark-theme');
-            } else {
-                document.body.classList.remove('dark-theme');
+        <div id="copy-feedback" class="copy-feedback" :class="{ show: showCopyFeedback }">
+            已复制到剪贴板！
+        </div>
+    </div>
+
+    <script>
+        const { createApp, ref, computed, onMounted } = Vue;
+        
+        const app = createApp({
+            setup() {
+                // 颜色数据
+                const colorData = {
+                    light: ${JSON.stringify(lightColors)},
+                    dark: ${JSON.stringify(darkColors)}
+                };
+                
+                // 当前主题
+                const currentTheme = ref('light');
+                
+                // 控制面板显示状态
+                const showPanel = ref(true);
+                
+                // 搜索关键词
+                const searchKeyword = ref('');
+                
+                // 复制反馈显示状态
+                const showCopyFeedback = ref(false);
+                
+                // 存储分组的折叠状态
+                const subgroupStates = ref(new Map());
+                
+                // 计算总颜色数
+                const totalColors = computed(() => {
+                    const themeData = colorData[currentTheme.value];
+                    return Object.values(themeData).reduce((total, group) => total + group.colors.length, 0);
+                });
+                
+                // 过滤后的颜色数据
+                const filteredColorData = computed(() => {
+                    const themeData = JSON.parse(JSON.stringify(colorData[currentTheme.value]));
+                    const keyword = searchKeyword.value.trim().toLowerCase();
+                    
+                    if (!keyword) {
+                        return themeData;
+                    }
+                    
+                    const filteredData = {};
+                    
+                    for (const [groupKey, group] of Object.entries(themeData)) {
+                        // 过滤主颜色列表
+                        const filteredColors = group.colors.filter(color => 
+                            color.name.toLowerCase().includes(keyword) || 
+                            color.value.toLowerCase().includes(keyword) ||
+                            color.cssVar.toLowerCase().includes(keyword)
+                        );
+                        
+                        // 过滤子分组
+                        const filteredSubgroups = {};
+                        let hasVisibleSubgroups = false;
+                        
+                        for (const [subgroupKey, subgroupColors] of Object.entries(group.subgroups || {})) {
+                            const filteredSubgroupColors = subgroupColors.filter(color => 
+                                color.name.toLowerCase().includes(keyword) || 
+                                color.value.toLowerCase().includes(keyword) ||
+                                color.cssVar.toLowerCase().includes(keyword)
+                            );
+                            
+                            if (filteredSubgroupColors.length > 0) {
+                                filteredSubgroups[subgroupKey] = filteredSubgroupColors;
+                                hasVisibleSubgroups = true;
+                            }
+                        }
+                        
+                        // 如果有匹配的颜色或子分组，保留该组
+                        if (filteredColors.length > 0 || hasVisibleSubgroups) {
+                            filteredData[groupKey] = {
+                                ...group,
+                                colors: filteredColors,
+                                subgroups: filteredSubgroups
+                            };
+                        }
+                    }
+                    
+                    return filteredData;
+                });
+                
+                // 切换面板显示
+                const togglePanel = () => {
+                    showPanel.value = !showPanel.value;
+                };
+                
+                // 切换主题
+                const switchTheme = (theme) => {
+                    currentTheme.value = theme;
+                    
+                    // 更新页面主题类
+                    if (theme === 'dark') {
+                        document.body.classList.add('dark-theme');
+                    } else {
+                        document.body.classList.remove('dark-theme');
+                    }
+                };
+                
+                // 复制到剪贴板
+                const copyToClipboard = (text) => {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showCopyFeedback.value = true;
+                        setTimeout(() => {
+                            showCopyFeedback.value = false;
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                };
+                
+                // 切换子分组显示/隐藏
+                const toggleSubgroup = (groupKey, subgroupKey) => {
+                    const subgroupId = 'subgroup-' + groupKey + '-' + subgroupKey;
+                    const subgroup = document.getElementById(subgroupId);
+                    if (subgroup) {
+                        subgroup.classList.toggle('collapsed');
+                        
+                        // 保存状态
+                        const stateKey = \`\${currentTheme.value}-\${groupKey}-\${subgroupKey}\`;
+                        subgroupStates.value.set(stateKey, subgroup.classList.contains('collapsed'));
+                    }
+                };
+                
+                // 初始化主题和分组状态
+                onMounted(() => {
+                    if (currentTheme.value === 'dark') {
+                        document.body.classList.add('dark-theme');
+                    }
+                    
+                    // 恢复分组的折叠状态
+                    setTimeout(() => {
+                        for (const [stateKey, isCollapsed] of subgroupStates.value.entries()) {
+                            if (stateKey.startsWith(\`\${currentTheme.value}-\`)) {
+                                const parts = stateKey.split('-');
+                                const groupKey = parts[1];
+                                const subgroupKey = parts[2];
+                                const subgroupId = 'subgroup-' + groupKey + '-' + subgroupKey;
+                                const subgroup = document.getElementById(subgroupId);
+                                if (subgroup && isCollapsed) {
+                                    subgroup.classList.add('collapsed');
+                                }
+                            }
+                        }
+                    }, 0);
+                });
+                
+                return {
+                    colorData,
+                    currentTheme,
+                    showPanel,
+                    searchKeyword,
+                    showCopyFeedback,
+                    filteredColorData,
+                    totalColors,
+                    togglePanel,
+                    switchTheme,
+                    copyToClipboard,
+                    toggleSubgroup
+                };
             }
-            
-            // 重新渲染内容
-            renderTheme(theme);
-        }
-        
-        // 页面加载完成后初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            renderTheme(currentTheme);
         });
+        
+        app.mount('#app');
     </script>
 </body>
 </html>`
