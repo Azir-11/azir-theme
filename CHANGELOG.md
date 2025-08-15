@@ -1,5 +1,11 @@
 # github-vscode-theme
 
+## 1.0.1
+
+### Patch Changes
+
+- Optimize color scheme for strings, providing a unique color for string literals
+
 ## 0.1.0
 
 ### Minor Changes
