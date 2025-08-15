@@ -1,5 +1,24 @@
 # github-vscode-theme
 
+## 0.1.0
+
+### Minor Changes
+
+- Completely redesigned color scheme with balanced green tones
+- Improved contrast for better readability in both light and dark modes
+- Light theme now features yellow as the primary accent color
+- Dark theme maintains green accents for a cohesive experience
+- Enhanced syntax highlighting with more diverse color palette
+- Better visual hierarchy and reduced color saturation for less eye strain
+
+### Patch Changes
+
+- Adjusted color scales to use more appropriate values for light and dark themes
+- Fixed issues with overly saturated greens in the light theme
+- Improved bracket pair colorization with better color distribution
+- Enhanced symbol icon colors for better visual distinction
+- Refined debug console colors for improved usability
+
 ## 6.3.5
 
 ### Patch Changes
