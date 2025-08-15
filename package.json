@@ -2,7 +2,7 @@
   "publisher": "Azir-11",
   "name": "azir-vscode-theme",
   "displayName": "Azir Theme",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Azir theme for VS Code",
   "license": "MIT",
   "repository": {
@@ -68,7 +68,7 @@
     "build": "node src/index.js && mkdir -p build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "package": "vsce package -o ./build/azir-theme.vsix",
+    "package": "vsce package --no-dependencies -o ./build/azir-theme.vsix",
     "prepublishOnly": "npm run build && vsce publish",
     "release": "changeset publish"
   },
