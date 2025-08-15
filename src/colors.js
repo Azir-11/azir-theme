@@ -8,10 +8,31 @@ function getPrimerVariable(variables, varName) {
 // 从 CSS 文件加载颜色变量
 function loadColorsFromCSS(themeName) {
   const variables = loadRawVariablesFromCSS(themeName)
-  
+
   // 构建颜色比例尺
   const scale = {}
-  const scaleColors = ['gray', 'blue', 'green', 'yellow', 'orange', 'red', 'purple', 'pink']
+  const scaleColors = [
+    'auburn',
+    'blue',
+    'brown',
+    'coral',
+    'cyan',
+    'gray',
+    'green',
+    'indigo',
+    'lemon',
+    'lime',
+    'olive',
+    'orange',
+    'pine',
+    'pink',
+    'plum',
+    'purple',
+    'red',
+    'teal',
+    'yellow',
+  ]
+
   for (const colorName of scaleColors) {
     scale[colorName] = []
     for (let i = 0; i <= 9; i++) {
@@ -19,17 +40,13 @@ function loadColorsFromCSS(themeName) {
       scale[colorName][i] = getPrimerVariable(variables, scaleKey) || `#${colorName}${i}`
     }
   }
-  
-  // 添加特殊的颜色
-  scale.white = '#ffffff'
-  scale.black = '#000000'
-  
+
   return { variables, scale }
 }
 
 function getColors(theme) {
   let themeName
-  
+
   switch (theme) {
     case 'light':
       themeName = 'light'
@@ -49,23 +66,8 @@ function getColors(theme) {
     default:
       throw new Error(`Colors are missing for value: ${theme}`)
   }
-  
-  const { variables, scale } = loadColorsFromCSS(themeName)
-  
-  // 应用临时覆盖，直到 Primitives 更新
-  if (theme === 'light') {
-    variables['bgColor-success-emphasis'] = '#1f883d'
-    variables['fgColor-default'] = '#1f2328'
-    variables['fgColor-muted'] = '#656d76'
-  }
-  
-  if (theme === 'dark') {
-    variables['fgColor-default'] = '#e6edf3'
-    variables['fgColor-muted'] = '#7d8590'
-    variables['fgColor-accent'] = '#2f81f7'
-  }
-  
-  return { variables, scale }
+
+  return loadColorsFromCSS(themeName)
 }
 
 module.exports = {
