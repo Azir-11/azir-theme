@@ -342,6 +342,15 @@ function getTheme({ theme, name }) {
       },
       {
         scope: [
+          'string',
+          'string punctuation.section.embedded source',
+        ],
+        settings: {
+          foreground: lightDark(scale.blue[7], scale.blue[6]),
+        },
+      },
+      {
+        scope: [
           'constant.other.placeholder',
           'constant.character',
         ],
@@ -409,7 +418,7 @@ function getTheme({ theme, name }) {
       {
         scope: ['storage', 'storage.type'],
         settings: {
-          foreground: lightDark(scale.purple[5], scale.teal[9]),
+          foreground: lightDark(scale.purple[5], scale.teal[7]),
         },
       },
       {
@@ -472,7 +481,6 @@ function getTheme({ theme, name }) {
         scope: [
           'variable.other.constant',
           'variable.other',
-          'string variable',
         ],
         settings: {
           foreground: v('fgColor-default'),
@@ -483,7 +491,7 @@ function getTheme({ theme, name }) {
           'variable.other.property',
         ],
         settings: {
-          foreground: lightDark(scale.green[5], scale.green[9]),
+          foreground: lightDark(scale.green[5], scale.green[8]),
         },
       },
       {
