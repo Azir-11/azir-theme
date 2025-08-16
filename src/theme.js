@@ -208,9 +208,9 @@ function getTheme({ theme, name }) {
       'editorInlayHint.paramBackground': alpha(scale.gray[7], 0.2),
       'editorInlayHint.paramForeground': v('fgColor-muted'),
 
-      'editorGutter.modifiedBackground': v('bgColor-attention-muted'),
-      'editorGutter.addedBackground': v('bgColor-success-muted'),
-      'editorGutter.deletedBackground': v('bgColor-danger-muted'),
+      'editorGutter.modifiedBackground': v('fgColor-done'),
+      'editorGutter.addedBackground': v('fgColor-success'),
+      'editorGutter.deletedBackground': v('fgColor-danger'),
 
       'diffEditor.insertedLineBackground': alpha(scale.green[5], 0.15),
       'diffEditor.insertedTextBackground': alpha(scale.green[3], 0.3),
