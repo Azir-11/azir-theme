@@ -1,12 +1,13 @@
 # github-vscode-theme
 
+## 1.0.2
+
+### Minor Changes
+
+- Fix the issue of peekViewResult color being too gray @Azir-11
+- optimize the editor's edge color configuration and use clearer foreground colors instead of background colors. @Azir-11
+
 ## 1.0.1
-
-### Patch Changes
-
-- Optimize color scheme for strings, providing a unique color for string literals
-
-## 0.1.0
 
 ### Minor Changes
 
