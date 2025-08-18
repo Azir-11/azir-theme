@@ -184,10 +184,10 @@ function getTheme({ theme, name }) {
       'editorWhitespace.foreground': scale.gray[5],
       'editorCursor.foreground': v('fgColor-accent'),
 
-      'editor.findMatchBackground': v('bgColor-attention-emphasis'),
-      'editor.findMatchHighlightBackground': alpha(scale.yellow[1], 0.5),
+      'editor.findMatchBackground': alpha(v('fgColor-severe'), 0.6),
+      'editor.findMatchHighlightBackground': alpha(v('fgColor-link'), 0.5),
       'editor.linkedEditingBackground': alpha(v('fgColor-accent'), 0.07),
-      'editor.inactiveSelectionBackground': alpha(v('fgColor-accent'), 0.07),
+      'editor.inactiveSelectionBackground': alpha(v('fgColor-accent'), 0.7),
       'editor.selectionBackground': alpha(v('fgColor-accent'), 0.2),
       'editor.selectionHighlightBackground': alpha(scale.green[3], 0.25),
       'editor.wordHighlightBackground': alpha(v('bgColor-neutral-muted'), 0.5),
