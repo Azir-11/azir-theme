@@ -311,11 +311,11 @@ function getTheme({ theme, name }) {
       'editorBracketHighlight.unexpectedBracket.foreground': v('fgColor-muted'), // gray
 
       'gitDecoration.addedResourceForeground': v('fgColor-success'),
-      'gitDecoration.modifiedResourceForeground': v('fgColor-attention'),
+      'gitDecoration.modifiedResourceForeground': v('fgColor-upsell'),
       'gitDecoration.deletedResourceForeground': v('fgColor-danger'),
       'gitDecoration.untrackedResourceForeground': v('fgColor-success'),
       'gitDecoration.ignoredResourceForeground': v('fgColor-muted'),
-      'gitDecoration.conflictingResourceForeground': v('fgColor-severe'),
+      'gitDecoration.conflictingResourceForeground': v('fgColor-sponsors'),
       'gitDecoration.submoduleResourceForeground': v('fgColor-muted'),
 
       'debugToolBar.background': v('overlay-bgColor') || v('bgColor-default'),
