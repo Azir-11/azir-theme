@@ -1,5 +1,12 @@
 # github-vscode-theme
 
+## 1.0.3
+
+## Minor Changes
+
+- Optimize the editor to find matching backgrounds and highlight background colors, improving readability.
+- Update the foreground color configuration of GitDecoration to use clearer colors to improve readability.
+
 ## 1.0.2
 
 ### Minor Changes
