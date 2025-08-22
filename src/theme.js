@@ -481,6 +481,8 @@ function getTheme({ theme, name }) {
         scope: [
           'variable.other.constant',
           'variable.other',
+          'support.type.property-name',
+          'support.type.vendored.property-name',
         ],
         settings: {
           foreground: v('fgColor-default'),
@@ -489,9 +491,10 @@ function getTheme({ theme, name }) {
       {
         scope: [
           'variable.other.property',
+          'variable',
         ],
         settings: {
-          foreground: lightDark(scale.green[5], scale.green[8]),
+          foreground: lightDark(scale.green[3], scale.green[8]),
         },
       },
       {
