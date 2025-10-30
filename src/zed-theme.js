@@ -17,14 +17,22 @@ function getZedTheme({ theme, name }) {
   const isLight = theme === 'light' || theme === 'light_high_contrast'
   const appearance = isLight ? 'light' : 'dark'
 
-  // Helper to add alpha to color
+  // Helper to add alpha to color - returns consistent RGBA format
   const alpha = (color, alphaValue) => {
-    return chroma(color).alpha(alphaValue).css()
+    const c = chroma(color).alpha(alphaValue)
+    const [r, g, b, a] = c.rgba()
+    return `rgba(${Math.round(r)},${Math.round(g)},${Math.round(b)},${a})`
   }
 
   // Helper to select color based on theme
   const lightDark = (light, dark) => {
     return isLight ? light : dark
+  }
+
+  // Helper to check if a color variable exists and is not a default/placeholder
+  const hasValidColor = (varName) => {
+    const color = variables[varName]
+    return color && color !== '#000000' && color !== '#ffffff'
   }
 
   return {
@@ -102,13 +110,9 @@ function getZedTheme({ theme, name }) {
           'editor.background': v('bgColor-default'),
           'editor.gutter.background': v('bgColor-default'),
           'editor.subheader.background': v('bgColor-muted'),
-          'editor.active_line.background': (() => {
-            const activeLineVar = variables['codeMirror-activeline-bgColor']
-            if (activeLineVar && activeLineVar !== '#000000') {
-              return ensureHexColor(activeLineVar)
-            }
-            return alpha(lightDark(scale.gray[3], scale.gray[7]), 0.2)
-          })(),
+          'editor.active_line.background': hasValidColor('codeMirror-activeline-bgColor')
+            ? v('codeMirror-activeline-bgColor')
+            : alpha(lightDark(scale.gray[3], scale.gray[7]), 0.2),
           'editor.highlighted_line.background': v('bgColor-neutral-muted'),
           'editor.line_number': lightDark(scale.gray[4], scale.gray[4]),
           'editor.active_line_number': v('fgColor-default'),
