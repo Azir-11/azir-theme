@@ -1,11 +1,11 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 
 // CSS 变量解析器
 function parseCSSVariables(cssContent) {
   const variables = {}
   const lines = cssContent.split('\n')
-  
+
   for (const line of lines) {
     const match = line.match(/^\s*--([^:]+):\s*([^;]+);/)
     if (match) {
@@ -13,7 +13,7 @@ function parseCSSVariables(cssContent) {
       variables[name.trim()] = value.trim()
     }
   }
-  
+
   return variables
 }
 
@@ -21,10 +21,10 @@ function parseCSSVariables(cssContent) {
 function resolveVariableReferences(variables) {
   const resolved = { ...variables }
   const maxIterations = 10 // 防止循环引用
-  
+
   for (let i = 0; i < maxIterations; i++) {
     let changed = false
-    
+
     for (const [key, value] of Object.entries(resolved)) {
       if (typeof value === 'string' && value.includes('var(')) {
         const varMatch = value.match(/var\(--([^)]+)\)/)
@@ -37,25 +37,26 @@ function resolveVariableReferences(variables) {
         }
       }
     }
-    
-    if (!changed) break
+
+    if (!changed)
+      break
   }
-  
+
   return resolved
 }
 
 // 从 CSS 文件加载原始变量
 function loadRawVariablesFromCSS(themeName) {
   const cssPath = path.join(__dirname, '../node_modules/@primer/primitives/dist/css/functional/themes', `${themeName}.css`)
-  
+
   if (!fs.existsSync(cssPath)) {
     throw new Error(`CSS theme file not found: ${cssPath}`)
   }
-  
+
   const cssContent = fs.readFileSync(cssPath, 'utf8')
   const variables = parseCSSVariables(cssContent)
   const resolved = resolveVariableReferences(variables)
-  
+
   return resolved
 }
 
@@ -63,45 +64,45 @@ function loadRawVariablesFromCSS(themeName) {
 const colorGroups = {
   foreground: {
     title: '前景色 (Foreground)',
-    patterns: ['fgColor-', 'color-prettylights-syntax-']
+    patterns: ['fgColor-', 'color-prettylights-syntax-'],
   },
   background: {
-    title: '背景色 (Background)', 
-    patterns: ['bgColor-', 'codeMirror-.*-bgColor']
+    title: '背景色 (Background)',
+    patterns: ['bgColor-', 'codeMirror-.*-bgColor'],
   },
   border: {
     title: '边框色 (Border)',
-    patterns: ['borderColor-']
+    patterns: ['borderColor-'],
   },
   button: {
     title: '按钮色 (Button)',
-    patterns: ['button-']
+    patterns: ['button-'],
   },
   control: {
     title: '控件色 (Control)',
-    patterns: ['control-']
+    patterns: ['control-'],
   },
   ansi: {
     title: 'ANSI 终端色 (ANSI)',
-    patterns: ['color-ansi-']
+    patterns: ['color-ansi-'],
   },
   scale: {
     title: '颜色比例尺 (Color Scale)',
-    patterns: ['display-.*-scale-']
+    patterns: ['display-.*-scale-'],
   },
   syntax: {
     title: '语法高亮 (Syntax)',
-    patterns: ['codeMirror-syntax-']
+    patterns: ['codeMirror-syntax-'],
   },
   other: {
     title: '其他 (Other)',
-    patterns: ['.*'] // 捕获所有其他颜色
-  }
+    patterns: ['.*'], // 捕获所有其他颜色
+  },
 }
 
 module.exports = {
   parseCSSVariables,
   resolveVariableReferences,
   loadRawVariablesFromCSS,
-  colorGroups
+  colorGroups,
 }

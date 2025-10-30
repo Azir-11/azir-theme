@@ -1,14 +1,17 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 const { loadRawVariablesFromCSS, colorGroups } = require('../src/shared')
 
 // 检查颜色是否为有效的十六进制颜色
 function isValidColor(color) {
-  if (!color || typeof color !== 'string') return false
+  if (!color || typeof color !== 'string')
+    return false
   // 检查十六进制颜色
-  if (/^#([0-9A-F]{3}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color)) return true
+  if (/^#([0-9A-F]{3}|[0-9A-F]{6}|[0-9A-F]{8})$/i.test(color))
+    return true
   // 检查 rgba 颜色
-  if (/^rgba?\([\d\s,./]+\)$/i.test(color)) return true
+  if (/^rgba?\([\d\s,./]+\)$/i.test(color))
+    return true
   return false
 }
 
@@ -26,61 +29,62 @@ function getSubgroupPrefix(varName) {
 function categorizeColors(variables) {
   const categorized = {}
   const usedKeys = new Set()
-  
+
   // 按优先级顺序处理分组（other 组放在最后）
   const groupOrder = Object.keys(colorGroups).filter(key => key !== 'other').concat(['other'])
-  
+
   for (const groupKey of groupOrder) {
     const group = colorGroups[groupKey]
     categorized[groupKey] = {
       title: group.title,
       colors: [],
-      subgroups: {}
+      subgroups: {},
     }
-    
+
     for (const [varName, value] of Object.entries(variables)) {
-      if (usedKeys.has(varName)) continue
-      
+      if (usedKeys.has(varName))
+        continue
+
       // 检查是否匹配当前组的模式
-      const matches = group.patterns.some(pattern => {
+      const matches = group.patterns.some((pattern) => {
         const regex = new RegExp(pattern, 'i')
         return regex.test(varName)
       })
-      
+
       if (matches && isValidColor(value)) {
         const colorItem = {
           name: varName,
-          value: value,
-          cssVar: `--${varName}`
+          value,
+          cssVar: `--${varName}`,
         }
-        
+
         categorized[groupKey].colors.push(colorItem)
-        
+
         // 创建子分组
         const subgroupPrefix = getSubgroupPrefix(varName)
         if (!categorized[groupKey].subgroups[subgroupPrefix]) {
           categorized[groupKey].subgroups[subgroupPrefix] = []
         }
         categorized[groupKey].subgroups[subgroupPrefix].push(colorItem)
-        
+
         usedKeys.add(varName)
       }
     }
-    
+
     // 按名称排序主颜色列表
     categorized[groupKey].colors.sort((a, b) => a.name.localeCompare(b.name))
-    
+
     // 按名称排序每个子分组
     for (const subgroupKey in categorized[groupKey].subgroups) {
       categorized[groupKey].subgroups[subgroupKey].sort((a, b) => a.name.localeCompare(b.name))
     }
-    
+
     // 如果组为空，删除它
     if (categorized[groupKey].colors.length === 0) {
       delete categorized[groupKey]
     }
   }
-  
+
   return categorized
 }
 
@@ -771,33 +775,33 @@ function getTotalColors(categorizedColors) {
 // 主函数
 function generateColorPreview() {
   console.log('🎨 生成颜色预览页面...')
-  
+
   try {
     // 加载两个主题的颜色
     const lightVariables = loadRawVariablesFromCSS('light')
     const darkVariables = loadRawVariablesFromCSS('dark')
-    
+
     console.log(`✓ Light theme: ${Object.keys(lightVariables).length} 个变量`)
     console.log(`✓ Dark theme: ${Object.keys(darkVariables).length} 个变量`)
-    
+
     // 分类颜色
     const lightColors = categorizeColors(lightVariables)
     const darkColors = categorizeColors(darkVariables)
-    
+
     console.log(`✓ Light theme: ${getTotalColors(lightColors)} 个有效颜色`)
     console.log(`✓ Dark theme: ${getTotalColors(darkColors)} 个有效颜色`)
-    
+
     // 生成 HTML
     const html = generateHTML(lightColors, darkColors)
-    
+
     // 写入文件
     const outputPath = path.join(__dirname, './color-preview.html')
     fs.writeFileSync(outputPath, html, 'utf8')
-    
+
     console.log(`✅ 颜色预览页面已生成: ${outputPath}`)
     console.log(`🌐 在浏览器中打开 file://${path.resolve(outputPath)} 查看`)
-    
-  } catch (error) {
+  }
+  catch (error) {
     console.error('❌ 生成失败:', error.message)
     process.exit(1)
   }
