@@ -1,8 +1,10 @@
-# Azir VS Code theme
+# Azir Theme
 
 > Forked and adapted from GitHub Theme v6.3.5.
 
-## Install
+A beautiful theme for VS Code and Zed editor that aims to match GitHub's appearance.
+
+## Install for VS Code
 
 1. Go to [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme).
 2. Click on the "Install" button.
@@ -12,6 +14,26 @@
     - `Azir Dark Default`
     - `Azir Dark High Contrast`
     - `Azir Dark Dimmed`
+
+## Install for Zed
+
+Zed themes are available in the `themes/zed/` directory. To install:
+
+1. Open Zed
+2. Open the command palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Linux/Windows)
+3. Type "zed: open themes folder" and select it
+4. Copy the theme files from `themes/zed/` to your Zed themes folder:
+   - `azir-light-default.json`
+   - `azir-light-high-contrast.json`
+   - `azir-dark-default.json`
+   - `azir-dark-high-contrast.json`
+   - `azir-dark-dimmed.json`
+5. Restart Zed or reload your configuration
+6. Select your preferred Azir theme from the theme selector
+
+Alternatively, you can manually copy the theme files to:
+- **macOS/Linux**: `~/.config/zed/themes/`
+- **Windows**: `%APPDATA%\Zed\themes\`
 
 <!-- Legacy themes removed in Azir fork -->
 
