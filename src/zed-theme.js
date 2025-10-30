@@ -19,7 +19,7 @@ function getZedTheme({ theme, name }) {
 
   // Helper to add alpha to color
   const alpha = (color, alphaValue) => {
-    return chroma(color).alpha(alphaValue).hex('rgba')
+    return chroma(color).alpha(alphaValue).css()
   }
 
   // Helper to select color based on theme
@@ -102,7 +102,13 @@ function getZedTheme({ theme, name }) {
           'editor.background': v('bgColor-default'),
           'editor.gutter.background': v('bgColor-default'),
           'editor.subheader.background': v('bgColor-muted'),
-          'editor.active_line.background': v('codeMirror-activeline-bgColor') || alpha(lightDark(scale.gray[3], scale.gray[7]), 0.2),
+          'editor.active_line.background': (() => {
+            const activeLineVar = variables['codeMirror-activeline-bgColor']
+            if (activeLineVar && activeLineVar !== '#000000') {
+              return ensureHexColor(activeLineVar)
+            }
+            return alpha(lightDark(scale.gray[3], scale.gray[7]), 0.2)
+          })(),
           'editor.highlighted_line.background': v('bgColor-neutral-muted'),
           'editor.line_number': lightDark(scale.gray[4], scale.gray[4]),
           'editor.active_line_number': v('fgColor-default'),
@@ -110,7 +116,7 @@ function getZedTheme({ theme, name }) {
           'editor.wrap_guide': alpha(v('borderColor-default'), 0.3),
           'editor.active_wrap_guide': alpha(v('borderColor-default'), 0.6),
           'editor.document_highlight.read_background': alpha(v('bgColor-neutral-emphasis'), 0.1),
-          'editor.document_highlight.write_background': alpha(scale.green[3], 0.25),
+          'editor.document_highlight.write_background': alpha(v('bgColor-success-muted'), 0.25),
 
           // Terminal
           'terminal.background': v('bgColor-default'),
