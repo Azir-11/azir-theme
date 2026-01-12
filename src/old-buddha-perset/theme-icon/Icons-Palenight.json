@@ -2,1102 +2,1102 @@
   "hidesExplorerArrows": true,
   "iconDefinitions": {
     "_file_actionscript": {
-      "iconPath": "../icons/files/actionscript.svg"
+      "iconPath": "../ions/files/actionscript.svg"
     },
     "_file_agents": {
-      "iconPath": "../icons/files/agents.svg"
+      "iconPath": "../ions/files/agents.svg"
     },
     "_file_ai": {
-      "iconPath": "../icons/files/ai.svg"
+      "iconPath": "../ions/files/ai.svg"
     },
     "_file_android": {
-      "iconPath": "../icons/files/android.svg"
+      "iconPath": "../ions/files/android.svg"
     },
     "_file_angular-component": {
-      "iconPath": "../icons/files/angular-component.svg"
+      "iconPath": "../ions/files/angular-component.svg"
     },
     "_file_angular-directive": {
-      "iconPath": "../icons/files/angular-directive.svg"
+      "iconPath": "../ions/files/angular-directive.svg"
     },
     "_file_angular-guard": {
-      "iconPath": "../icons/files/angular-guard.svg"
+      "iconPath": "../ions/files/angular-guard.svg"
     },
     "_file_angular-pipe": {
-      "iconPath": "../icons/files/angular-pipe.svg"
+      "iconPath": "../ions/files/angular-pipe.svg"
     },
     "_file_angular-resolver": {
-      "iconPath": "../icons/files/angular-resolver.svg"
+      "iconPath": "../ions/files/angular-resolver.svg"
     },
     "_file_angular-routing": {
-      "iconPath": "../icons/files/angular-routing.svg"
+      "iconPath": "../ions/files/angular-routing.svg"
     },
     "_file_angular-service": {
-      "iconPath": "../icons/files/angular-service.svg"
+      "iconPath": "../ions/files/angular-service.svg"
     },
     "_file_angular": {
-      "iconPath": "../icons/files/angular.svg"
+      "iconPath": "../ions/files/angular.svg"
     },
     "_file_apk": {
-      "iconPath": "../icons/files/apk.svg"
+      "iconPath": "../ions/files/apk.svg"
     },
     "_file_apollo": {
-      "iconPath": "../icons/files/apollo.svg"
+      "iconPath": "../ions/files/apollo.svg"
     },
     "_file_applescript": {
-      "iconPath": "../icons/files/applescript.svg"
+      "iconPath": "../ions/files/applescript.svg"
     },
     "_file_arduino": {
-      "iconPath": "../icons/files/arduino.svg"
+      "iconPath": "../ions/files/arduino.svg"
     },
     "_file_assembly": {
-      "iconPath": "../icons/files/assembly.svg"
+      "iconPath": "../ions/files/assembly.svg"
     },
     "_file_assemblyscript": {
-      "iconPath": "../icons/files/assemblyscript.svg"
+      "iconPath": "../ions/files/assemblyscript.svg"
     },
     "_file_astro": {
-      "iconPath": "../icons/files/astro.svg"
+      "iconPath": "../ions/files/astro.svg"
     },
     "_file_audio": {
-      "iconPath": "../icons/files/audio.svg"
+      "iconPath": "../ions/files/audio.svg"
     },
     "_file_azure": {
-      "iconPath": "../icons/files/azure.svg"
+      "iconPath": "../ions/files/azure.svg"
     },
     "_file_babel": {
-      "iconPath": "../icons/files/babel.svg"
+      "iconPath": "../ions/files/babel.svg"
     },
     "_file_binary": {
-      "iconPath": "../icons/files/binary.svg"
+      "iconPath": "../ions/files/binary.svg"
     },
     "_file_biome": {
-      "iconPath": "../icons/files/biome.svg"
+      "iconPath": "../ions/files/biome.svg"
     },
     "_file_bitbucket": {
-      "iconPath": "../icons/files/bitbucket.svg"
+      "iconPath": "../ions/files/bitbucket.svg"
     },
     "_file_blade": {
-      "iconPath": "../icons/files/blade.svg"
+      "iconPath": "../ions/files/blade.svg"
     },
     "_file_blazor": {
-      "iconPath": "../icons/files/blazor.svg"
+      "iconPath": "../ions/files/blazor.svg"
     },
     "_file_bower": {
-      "iconPath": "../icons/files/bower.svg"
+      "iconPath": "../ions/files/bower.svg"
     },
     "_file_browserlist": {
-      "iconPath": "../icons/files/browserlist.svg"
+      "iconPath": "../ions/files/browserlist.svg"
     },
     "_file_bun": {
-      "iconPath": "../icons/files/bun.svg"
+      "iconPath": "../ions/files/bun.svg"
     },
     "_file_c": {
-      "iconPath": "../icons/files/c.svg"
+      "iconPath": "../ions/files/c.svg"
     },
     "_file_cabal": {
-      "iconPath": "../icons/files/cabal.svg"
+      "iconPath": "../ions/files/cabal.svg"
     },
     "_file_changelog": {
-      "iconPath": "../icons/files/changelog.svg"
+      "iconPath": "../ions/files/changelog.svg"
     },
     "_file_claude": {
-      "iconPath": "../icons/files/claude.svg"
+      "iconPath": "../ions/files/claude.svg"
     },
     "_file_clojure": {
-      "iconPath": "../icons/files/clojure.svg"
+      "iconPath": "../ions/files/clojure.svg"
     },
     "_file_cmd": {
-      "iconPath": "../icons/files/cmd.svg"
+      "iconPath": "../ions/files/cmd.svg"
     },
     "_file_codecov": {
-      "iconPath": "../icons/files/codecov.svg"
+      "iconPath": "../ions/files/codecov.svg"
     },
     "_file_coderabbit": {
-      "iconPath": "../icons/files/coderabbit.svg"
+      "iconPath": "../ions/files/coderabbit.svg"
     },
     "_file_coffee": {
-      "iconPath": "../icons/files/coffee.svg"
+      "iconPath": "../ions/files/coffee.svg"
     },
     "_file_coldfusion": {
-      "iconPath": "../icons/files/coldfusion.svg"
+      "iconPath": "../ions/files/coldfusion.svg"
     },
     "_file_commitlint": {
-      "iconPath": "../icons/files/commitlint.svg"
+      "iconPath": "../ions/files/commitlint.svg"
     },
     "_file_conduct": {
-      "iconPath": "../icons/files/conduct.svg"
+      "iconPath": "../ions/files/conduct.svg"
     },
     "_file_console": {
-      "iconPath": "../icons/files/console.svg"
+      "iconPath": "../ions/files/console.svg"
     },
     "_file_contributing": {
-      "iconPath": "../icons/files/contributing.svg"
+      "iconPath": "../ions/files/contributing.svg"
     },
     "_file_copilot": {
-      "iconPath": "../icons/files/copilot.svg"
+      "iconPath": "../ions/files/copilot.svg"
     },
     "_file_cpp": {
-      "iconPath": "../icons/files/cpp.svg"
+      "iconPath": "../ions/files/cpp.svg"
     },
     "_file_crystal": {
-      "iconPath": "../icons/files/crystal.svg"
+      "iconPath": "../ions/files/crystal.svg"
     },
     "_file_csharp": {
-      "iconPath": "../icons/files/csharp.svg"
+      "iconPath": "../ions/files/csharp.svg"
     },
     "_file_css": {
-      "iconPath": "../icons/files/css.svg"
+      "iconPath": "../ions/files/css.svg"
     },
     "_file_cuda-cpp": {
-      "iconPath": "../icons/files/cuda-cpp.svg"
+      "iconPath": "../ions/files/cuda-cpp.svg"
     },
     "_file_cuda": {
-      "iconPath": "../icons/files/cuda.svg"
+      "iconPath": "../ions/files/cuda.svg"
     },
     "_file_cursor": {
-      "iconPath": "../icons/files/cursor.svg"
+      "iconPath": "../ions/files/cursor.svg"
     },
     "_file_cypress": {
-      "iconPath": "../icons/files/cypress.svg"
+      "iconPath": "../ions/files/cypress.svg"
     },
     "_file_dart": {
-      "iconPath": "../icons/files/dart.svg"
+      "iconPath": "../ions/files/dart.svg"
     },
     "_file_database": {
-      "iconPath": "../icons/files/database.svg"
+      "iconPath": "../ions/files/database.svg"
     },
     "_file_deno": {
-      "iconPath": "../icons/files/deno.svg"
+      "iconPath": "../ions/files/deno.svg"
     },
     "_file_dependabot": {
-      "iconPath": "../icons/files/dependabot.svg"
+      "iconPath": "../ions/files/dependabot.svg"
     },
     "_file_django": {
-      "iconPath": "../icons/files/django.svg"
+      "iconPath": "../ions/files/django.svg"
     },
     "_file_dlang": {
-      "iconPath": "../icons/files/dlang.svg"
+      "iconPath": "../ions/files/dlang.svg"
     },
     "_file_docker": {
-      "iconPath": "../icons/files/docker.svg"
+      "iconPath": "../ions/files/docker.svg"
     },
     "_file_document": {
-      "iconPath": "../icons/files/document.svg"
+      "iconPath": "../ions/files/document.svg"
     },
     "_file_elixir-lock": {
-      "iconPath": "../icons/files/elixir-lock.svg"
+      "iconPath": "../ions/files/elixir-lock.svg"
     },
     "_file_elixir": {
-      "iconPath": "../icons/files/elixir.svg"
+      "iconPath": "../ions/files/elixir.svg"
     },
     "_file_elm": {
-      "iconPath": "../icons/files/elm.svg"
+      "iconPath": "../ions/files/elm.svg"
     },
     "_file_erlang": {
-      "iconPath": "../icons/files/erlang.svg"
+      "iconPath": "../ions/files/erlang.svg"
     },
     "_file_esbuild": {
-      "iconPath": "../icons/files/esbuild.svg"
+      "iconPath": "../ions/files/esbuild.svg"
     },
     "_file_eslint": {
-      "iconPath": "../icons/files/eslint.svg"
+      "iconPath": "../ions/files/eslint.svg"
     },
     "_file_ex": {
-      "iconPath": "../icons/files/ex.svg"
+      "iconPath": "../ions/files/ex.svg"
     },
     "_file_exe": {
-      "iconPath": "../icons/files/exe.svg"
+      "iconPath": "../ions/files/exe.svg"
     },
     "_file_favicon": {
-      "iconPath": "../icons/files/favicon.svg"
+      "iconPath": "../ions/files/favicon.svg"
     },
     "_file_file_lnk": {
-      "iconPath": "../icons/files/file_lnk.svg"
+      "iconPath": "../ions/files/file_lnk.svg"
     },
     "_file_firebase": {
-      "iconPath": "../icons/files/firebase.svg"
+      "iconPath": "../ions/files/firebase.svg"
     },
     "_file_flow": {
-      "iconPath": "../icons/files/flow.svg"
+      "iconPath": "../ions/files/flow.svg"
     },
     "_file_font": {
-      "iconPath": "../icons/files/font.svg"
+      "iconPath": "../ions/files/font.svg"
     },
     "_file_fsharp": {
-      "iconPath": "../icons/files/fsharp.svg"
+      "iconPath": "../ions/files/fsharp.svg"
     },
     "_file_gatsby": {
-      "iconPath": "../icons/files/gatsby.svg"
+      "iconPath": "../ions/files/gatsby.svg"
     },
     "_file_gcloud": {
-      "iconPath": "../icons/files/gcloud.svg"
+      "iconPath": "../ions/files/gcloud.svg"
     },
     "_file_geojson": {
-      "iconPath": "../icons/files/geojson.svg"
+      "iconPath": "../ions/files/geojson.svg"
     },
     "_file_git": {
-      "iconPath": "../icons/files/git.svg"
+      "iconPath": "../ions/files/git.svg"
     },
     "_file_github-action": {
-      "iconPath": "../icons/files/github-action.svg"
+      "iconPath": "../ions/files/github-action.svg"
     },
     "_file_github": {
-      "iconPath": "../icons/files/github.svg"
+      "iconPath": "../ions/files/github.svg"
     },
     "_file_gitlab": {
-      "iconPath": "../icons/files/gitlab.svg"
+      "iconPath": "../ions/files/gitlab.svg"
     },
     "_file_gltf": {
-      "iconPath": "../icons/files/gltf.svg"
+      "iconPath": "../ions/files/gltf.svg"
     },
     "_file_go-mod": {
-      "iconPath": "../icons/files/go-mod.svg"
+      "iconPath": "../ions/files/go-mod.svg"
     },
     "_file_go-sum": {
-      "iconPath": "../icons/files/go-sum.svg"
+      "iconPath": "../ions/files/go-sum.svg"
     },
     "_file_go": {
-      "iconPath": "../icons/files/go.svg"
+      "iconPath": "../ions/files/go.svg"
     },
     "_file_godot": {
-      "iconPath": "../icons/files/godot.svg"
+      "iconPath": "../ions/files/godot.svg"
     },
     "_file_godot_assets": {
-      "iconPath": "../icons/files/godot_assets.svg"
+      "iconPath": "../ions/files/godot_assets.svg"
     },
     "_file_gradle-settings": {
-      "iconPath": "../icons/files/gradle-settings.svg"
+      "iconPath": "../ions/files/gradle-settings.svg"
     },
     "_file_gradle": {
-      "iconPath": "../icons/files/gradle.svg"
+      "iconPath": "../ions/files/gradle.svg"
     },
     "_file_graphql": {
-      "iconPath": "../icons/files/graphql.svg"
+      "iconPath": "../ions/files/graphql.svg"
     },
     "_file_graphviz": {
-      "iconPath": "../icons/files/graphviz.svg"
+      "iconPath": "../ions/files/graphviz.svg"
     },
     "_file_gridsome": {
-      "iconPath": "../icons/files/gridsome.svg"
+      "iconPath": "../ions/files/gridsome.svg"
     },
     "_file_groovy": {
-      "iconPath": "../icons/files/groovy.svg"
+      "iconPath": "../ions/files/groovy.svg"
     },
     "_file_groq": {
-      "iconPath": "../icons/files/groq.svg"
+      "iconPath": "../ions/files/groq.svg"
     },
     "_file_grunt": {
-      "iconPath": "../icons/files/grunt.svg"
+      "iconPath": "../ions/files/grunt.svg"
     },
     "_file_gulp": {
-      "iconPath": "../icons/files/gulp.svg"
+      "iconPath": "../ions/files/gulp.svg"
     },
     "_file_haml": {
-      "iconPath": "../icons/files/haml.svg"
+      "iconPath": "../ions/files/haml.svg"
     },
     "_file_handlebars": {
-      "iconPath": "../icons/files/handlebars.svg"
+      "iconPath": "../ions/files/handlebars.svg"
     },
     "_file_haskell": {
-      "iconPath": "../icons/files/haskell.svg"
+      "iconPath": "../ions/files/haskell.svg"
     },
     "_file_haxe": {
-      "iconPath": "../icons/files/haxe.svg"
+      "iconPath": "../ions/files/haxe.svg"
     },
     "_file_heart": {
-      "iconPath": "../icons/files/heart.svg"
+      "iconPath": "../ions/files/heart.svg"
     },
     "_file_hlsl": {
-      "iconPath": "../icons/files/hlsl.svg"
+      "iconPath": "../ions/files/hlsl.svg"
     },
     "_file_html": {
-      "iconPath": "../icons/files/html.svg"
+      "iconPath": "../ions/files/html.svg"
     },
     "_file_i18n": {
-      "iconPath": "../icons/files/i18n.svg"
+      "iconPath": "../ions/files/i18n.svg"
     },
     "_file_image": {
-      "iconPath": "../icons/files/image.svg"
+      "iconPath": "../ions/files/image.svg"
     },
     "_file_ionic": {
-      "iconPath": "../icons/files/ionic.svg"
+      "iconPath": "../ions/files/ionic.svg"
     },
     "_file_java": {
-      "iconPath": "../icons/files/java.svg"
+      "iconPath": "../ions/files/java.svg"
     },
     "_file_jenkins": {
-      "iconPath": "../icons/files/jenkins.svg"
+      "iconPath": "../ions/files/jenkins.svg"
     },
     "_file_jest": {
-      "iconPath": "../icons/files/jest.svg"
+      "iconPath": "../ions/files/jest.svg"
     },
     "_file_js": {
-      "iconPath": "../icons/files/js.svg"
+      "iconPath": "../ions/files/js.svg"
     },
     "_file_js_map": {
-      "iconPath": "../icons/files/js_map.svg"
+      "iconPath": "../ions/files/js_map.svg"
     },
     "_file_json": {
-      "iconPath": "../icons/files/json.svg"
+      "iconPath": "../ions/files/json.svg"
     },
     "_file_julia": {
-      "iconPath": "../icons/files/julia.svg"
+      "iconPath": "../ions/files/julia.svg"
     },
     "_file_jupyter": {
-      "iconPath": "../icons/files/jupyter.svg"
+      "iconPath": "../ions/files/jupyter.svg"
     },
     "_file_key": {
-      "iconPath": "../icons/files/key.svg"
+      "iconPath": "../ions/files/key.svg"
     },
     "_file_kivy": {
-      "iconPath": "../icons/files/kivy.svg"
+      "iconPath": "../ions/files/kivy.svg"
     },
     "_file_kotlin": {
-      "iconPath": "../icons/files/kotlin.svg"
+      "iconPath": "../ions/files/kotlin.svg"
     },
     "_file_kubernetes": {
-      "iconPath": "../icons/files/kubernetes.svg"
+      "iconPath": "../ions/files/kubernetes.svg"
     },
     "_file_latex": {
-      "iconPath": "../icons/files/latex.svg"
+      "iconPath": "../ions/files/latex.svg"
     },
     "_file_less": {
-      "iconPath": "../icons/files/less.svg"
+      "iconPath": "../ions/files/less.svg"
     },
     "_file_lib": {
-      "iconPath": "../icons/files/lib.svg"
+      "iconPath": "../ions/files/lib.svg"
     },
     "_file_license": {
-      "iconPath": "../icons/files/license.svg"
+      "iconPath": "../ions/files/license.svg"
     },
     "_file_liquid": {
-      "iconPath": "../icons/files/liquid.svg"
+      "iconPath": "../ions/files/liquid.svg"
     },
     "_file_log": {
-      "iconPath": "../icons/files/log.svg"
+      "iconPath": "../ions/files/log.svg"
     },
     "_file_lua": {
-      "iconPath": "../icons/files/lua.svg"
+      "iconPath": "../ions/files/lua.svg"
     },
     "_file_luau": {
-      "iconPath": "../icons/files/luau.svg"
+      "iconPath": "../ions/files/luau.svg"
     },
     "_file_m3u8": {
-      "iconPath": "../icons/files/m3u8.svg"
+      "iconPath": "../ions/files/m3u8.svg"
     },
     "_file_makefile": {
-      "iconPath": "../icons/files/makefile.svg"
+      "iconPath": "../ions/files/makefile.svg"
     },
     "_file_markdown": {
-      "iconPath": "../icons/files/markdown.svg"
+      "iconPath": "../ions/files/markdown.svg"
     },
     "_file_markojs": {
-      "iconPath": "../icons/files/markojs.svg"
+      "iconPath": "../ions/files/markojs.svg"
     },
     "_file_markup": {
-      "iconPath": "../icons/files/markup.svg"
+      "iconPath": "../ions/files/markup.svg"
     },
     "_file_matlab": {
-      "iconPath": "../icons/files/matlab.svg"
+      "iconPath": "../ions/files/matlab.svg"
     },
     "_file_mdx": {
-      "iconPath": "../icons/files/mdx.svg"
+      "iconPath": "../ions/files/mdx.svg"
     },
     "_file_mjml": {
-      "iconPath": "../icons/files/mjml.svg"
+      "iconPath": "../ions/files/mjml.svg"
     },
     "_file_movie": {
-      "iconPath": "../icons/files/movie.svg"
+      "iconPath": "../ions/files/movie.svg"
     },
     "_file_mpd": {
-      "iconPath": "../icons/files/mpd.svg"
+      "iconPath": "../ions/files/mpd.svg"
     },
     "_file_mxml": {
-      "iconPath": "../icons/files/mxml.svg"
+      "iconPath": "../ions/files/mxml.svg"
     },
     "_file_nest": {
-      "iconPath": "../icons/files/nest.svg"
+      "iconPath": "../ions/files/nest.svg"
     },
     "_file_netlify": {
-      "iconPath": "../icons/files/netlify.svg"
+      "iconPath": "../ions/files/netlify.svg"
     },
     "_file_nextjs": {
-      "iconPath": "../icons/files/nextjs.svg"
+      "iconPath": "../ions/files/nextjs.svg"
     },
     "_file_nginx": {
-      "iconPath": "../icons/files/nginx.svg"
+      "iconPath": "../ions/files/nginx.svg"
     },
     "_file_nix": {
-      "iconPath": "../icons/files/nix.svg"
+      "iconPath": "../ions/files/nix.svg"
     },
     "_file_node": {
-      "iconPath": "../icons/files/node.svg"
+      "iconPath": "../ions/files/node.svg"
     },
     "_file_nodemon": {
-      "iconPath": "../icons/files/nodemon.svg"
+      "iconPath": "../ions/files/nodemon.svg"
     },
     "_file_note": {
-      "iconPath": "../icons/files/note.svg"
+      "iconPath": "../ions/files/note.svg"
     },
     "_file_npm": {
-      "iconPath": "../icons/files/npm.svg"
+      "iconPath": "../ions/files/npm.svg"
     },
     "_file_nunjucks": {
-      "iconPath": "../icons/files/nunjucks.svg"
+      "iconPath": "../ions/files/nunjucks.svg"
     },
     "_file_nuxtconfig": {
-      "iconPath": "../icons/files/nuxtconfig.svg"
+      "iconPath": "../ions/files/nuxtconfig.svg"
     },
     "_file_ocaml": {
-      "iconPath": "../icons/files/ocaml.svg"
+      "iconPath": "../ions/files/ocaml.svg"
     },
     "_file_odin": {
-      "iconPath": "../icons/files/odin.svg"
+      "iconPath": "../ions/files/odin.svg"
     },
     "_file_oxc": {
-      "iconPath": "../icons/files/oxc.svg"
+      "iconPath": "../ions/files/oxc.svg"
     },
     "_file_package-lock": {
-      "iconPath": "../icons/files/package-lock.svg"
+      "iconPath": "../ions/files/package-lock.svg"
     },
     "_file_parcel": {
-      "iconPath": "../icons/files/parcel.svg"
+      "iconPath": "../ions/files/parcel.svg"
     },
     "_file_payload": {
-      "iconPath": "../icons/files/payload.svg"
+      "iconPath": "../ions/files/payload.svg"
     },
     "_file_pdf": {
-      "iconPath": "../icons/files/pdf.svg"
+      "iconPath": "../ions/files/pdf.svg"
     },
     "_file_perl": {
-      "iconPath": "../icons/files/perl.svg"
+      "iconPath": "../ions/files/perl.svg"
     },
     "_file_php": {
-      "iconPath": "../icons/files/php.svg"
+      "iconPath": "../ions/files/php.svg"
     },
     "_file_playwright": {
-      "iconPath": "../icons/files/playwright.svg"
+      "iconPath": "../ions/files/playwright.svg"
     },
     "_file_pnpm-lock": {
-      "iconPath": "../icons/files/pnpm-lock.svg"
+      "iconPath": "../ions/files/pnpm-lock.svg"
     },
     "_file_pnpm": {
-      "iconPath": "../icons/files/pnpm.svg"
+      "iconPath": "../ions/files/pnpm.svg"
     },
     "_file_postcss": {
-      "iconPath": "../icons/files/postcss.svg"
+      "iconPath": "../ions/files/postcss.svg"
     },
     "_file_powerpoint": {
-      "iconPath": "../icons/files/powerpoint.svg"
+      "iconPath": "../ions/files/powerpoint.svg"
     },
     "_file_prettier": {
-      "iconPath": "../icons/files/prettier.svg"
+      "iconPath": "../ions/files/prettier.svg"
     },
     "_file_prisma": {
-      "iconPath": "../icons/files/prisma.svg"
+      "iconPath": "../ions/files/prisma.svg"
     },
     "_file_procfile": {
-      "iconPath": "../icons/files/procfile.svg"
+      "iconPath": "../ions/files/procfile.svg"
     },
     "_file_proguard": {
-      "iconPath": "../icons/files/proguard.svg"
+      "iconPath": "../ions/files/proguard.svg"
     },
     "_file_protobuf": {
-      "iconPath": "../icons/files/protobuf.svg"
+      "iconPath": "../ions/files/protobuf.svg"
     },
     "_file_psd": {
-      "iconPath": "../icons/files/psd.svg"
+      "iconPath": "../ions/files/psd.svg"
     },
     "_file_pug": {
-      "iconPath": "../icons/files/pug.svg"
+      "iconPath": "../ions/files/pug.svg"
     },
     "_file_puppet": {
-      "iconPath": "../icons/files/puppet.svg"
+      "iconPath": "../ions/files/puppet.svg"
     },
     "_file_puppeteer": {
-      "iconPath": "../icons/files/puppeteer.svg"
+      "iconPath": "../ions/files/puppeteer.svg"
     },
     "_file_python": {
-      "iconPath": "../icons/files/python.svg"
+      "iconPath": "../ions/files/python.svg"
     },
     "_file_r": {
-      "iconPath": "../icons/files/r.svg"
+      "iconPath": "../ions/files/r.svg"
     },
     "_file_rails": {
-      "iconPath": "../icons/files/rails.svg"
+      "iconPath": "../ions/files/rails.svg"
     },
     "_file_raku": {
-      "iconPath": "../icons/files/raku.svg"
+      "iconPath": "../ions/files/raku.svg"
     },
     "_file_react": {
-      "iconPath": "../icons/files/react.svg"
+      "iconPath": "../ions/files/react.svg"
     },
     "_file_readme": {
-      "iconPath": "../icons/files/readme.svg"
+      "iconPath": "../ions/files/readme.svg"
     },
     "_file_reason": {
-      "iconPath": "../icons/files/reason.svg"
+      "iconPath": "../ions/files/reason.svg"
     },
     "_file_remix": {
-      "iconPath": "../icons/files/remix.svg"
+      "iconPath": "../ions/files/remix.svg"
     },
     "_file_roblox": {
-      "iconPath": "../icons/files/roblox.svg"
+      "iconPath": "../ions/files/roblox.svg"
     },
     "_file_rollup": {
-      "iconPath": "../icons/files/rollup.svg"
+      "iconPath": "../ions/files/rollup.svg"
     },
     "_file_ruby": {
-      "iconPath": "../icons/files/ruby.svg"
+      "iconPath": "../ions/files/ruby.svg"
     },
     "_file_rust": {
-      "iconPath": "../icons/files/rust.svg"
+      "iconPath": "../ions/files/rust.svg"
     },
     "_file_salesforce": {
-      "iconPath": "../icons/files/salesforce.svg"
+      "iconPath": "../ions/files/salesforce.svg"
     },
     "_file_sass": {
-      "iconPath": "../icons/files/sass.svg"
+      "iconPath": "../ions/files/sass.svg"
     },
     "_file_scala": {
-      "iconPath": "../icons/files/scala.svg"
+      "iconPath": "../ions/files/scala.svg"
     },
     "_file_sentry": {
-      "iconPath": "../icons/files/sentry.svg"
+      "iconPath": "../ions/files/sentry.svg"
     },
     "_file_settings": {
-      "iconPath": "../icons/files/settings.svg"
+      "iconPath": "../ions/files/settings.svg"
     },
     "_file_sketch": {
-      "iconPath": "../icons/files/sketch.svg"
+      "iconPath": "../ions/files/sketch.svg"
     },
     "_file_slim": {
-      "iconPath": "../icons/files/slim.svg"
+      "iconPath": "../ions/files/slim.svg"
     },
     "_file_slint": {
-      "iconPath": "../icons/files/slint.svg"
+      "iconPath": "../ions/files/slint.svg"
     },
     "_file_slurm": {
-      "iconPath": "../icons/files/slurm.svg"
+      "iconPath": "../ions/files/slurm.svg"
     },
     "_file_source": {
-      "iconPath": "../icons/files/source.svg"
+      "iconPath": "../ions/files/source.svg"
     },
     "_file_sql-lite": {
-      "iconPath": "../icons/files/sql-lite.svg"
+      "iconPath": "../ions/files/sql-lite.svg"
     },
     "_file_sql": {
-      "iconPath": "../icons/files/sql.svg"
+      "iconPath": "../ions/files/sql.svg"
     },
     "_file_stencil": {
-      "iconPath": "../icons/files/stencil.svg"
+      "iconPath": "../ions/files/stencil.svg"
     },
     "_file_storybook": {
-      "iconPath": "../icons/files/storybook.svg"
+      "iconPath": "../ions/files/storybook.svg"
     },
     "_file_stylelint": {
-      "iconPath": "../icons/files/stylelint.svg"
+      "iconPath": "../ions/files/stylelint.svg"
     },
     "_file_stylus": {
-      "iconPath": "../icons/files/stylus.svg"
+      "iconPath": "../ions/files/stylus.svg"
     },
     "_file_sublime": {
-      "iconPath": "../icons/files/sublime.svg"
+      "iconPath": "../ions/files/sublime.svg"
     },
     "_file_supabase": {
-      "iconPath": "../icons/files/supabase.svg"
+      "iconPath": "../ions/files/supabase.svg"
     },
     "_file_surrealql": {
-      "iconPath": "../icons/files/surrealql.svg"
+      "iconPath": "../ions/files/surrealql.svg"
     },
     "_file_svelte": {
-      "iconPath": "../icons/files/svelte.svg"
+      "iconPath": "../ions/files/svelte.svg"
     },
     "_file_svg": {
-      "iconPath": "../icons/files/svg.svg"
+      "iconPath": "../ions/files/svg.svg"
     },
     "_file_svgo": {
-      "iconPath": "../icons/files/svgo.svg"
+      "iconPath": "../ions/files/svgo.svg"
     },
     "_file_svgr": {
-      "iconPath": "../icons/files/svgr.svg"
+      "iconPath": "../ions/files/svgr.svg"
     },
     "_file_swagger": {
-      "iconPath": "../icons/files/swagger.svg"
+      "iconPath": "../ions/files/swagger.svg"
     },
     "_file_swc": {
-      "iconPath": "../icons/files/swc.svg"
+      "iconPath": "../ions/files/swc.svg"
     },
     "_file_swcrc": {
-      "iconPath": "../icons/files/swcrc.svg"
+      "iconPath": "../ions/files/swcrc.svg"
     },
     "_file_swift": {
-      "iconPath": "../icons/files/swift.svg"
+      "iconPath": "../ions/files/swift.svg"
     },
     "_file_swig": {
-      "iconPath": "../icons/files/swig.svg"
+      "iconPath": "../ions/files/swig.svg"
     },
     "_file_table": {
-      "iconPath": "../icons/files/table.svg"
+      "iconPath": "../ions/files/table.svg"
     },
     "_file_tailwind": {
-      "iconPath": "../icons/files/tailwind.svg"
+      "iconPath": "../ions/files/tailwind.svg"
     },
     "_file_tcl": {
-      "iconPath": "../icons/files/tcl.svg"
+      "iconPath": "../ions/files/tcl.svg"
     },
     "_file_terraform": {
-      "iconPath": "../icons/files/terraform.svg"
+      "iconPath": "../ions/files/terraform.svg"
     },
     "_file_test": {
-      "iconPath": "../icons/files/test.svg"
+      "iconPath": "../ions/files/test.svg"
     },
     "_file_tex": {
-      "iconPath": "../icons/files/tex.svg"
+      "iconPath": "../ions/files/tex.svg"
     },
     "_file_todo": {
-      "iconPath": "../icons/files/todo.svg"
+      "iconPath": "../ions/files/todo.svg"
     },
     "_file_toml": {
-      "iconPath": "../icons/files/toml.svg"
+      "iconPath": "../ions/files/toml.svg"
     },
     "_file_tsconfig": {
-      "iconPath": "../icons/files/tsconfig.svg"
+      "iconPath": "../ions/files/tsconfig.svg"
     },
     "_file_tslint": {
-      "iconPath": "../icons/files/tslint.svg"
+      "iconPath": "../ions/files/tslint.svg"
     },
     "_file_tune": {
-      "iconPath": "../icons/files/tune.svg"
+      "iconPath": "../ions/files/tune.svg"
     },
     "_file_turbo": {
-      "iconPath": "../icons/files/turbo.svg"
+      "iconPath": "../ions/files/turbo.svg"
     },
     "_file_twig": {
-      "iconPath": "../icons/files/twig.svg"
+      "iconPath": "../ions/files/twig.svg"
     },
     "_file_typescript": {
-      "iconPath": "../icons/files/typescript.svg"
+      "iconPath": "../ions/files/typescript.svg"
     },
     "_file_typescript_def": {
-      "iconPath": "../icons/files/typescript_def.svg"
+      "iconPath": "../ions/files/typescript_def.svg"
     },
     "_file_unity": {
-      "iconPath": "../icons/files/unity.svg"
+      "iconPath": "../ions/files/unity.svg"
     },
     "_file_unknown": {
-      "iconPath": "../icons/files/unknown.svg"
+      "iconPath": "../ions/files/unknown.svg"
     },
     "_file_vercel": {
-      "iconPath": "../icons/files/vercel.svg"
+      "iconPath": "../ions/files/vercel.svg"
     },
     "_file_vhdl": {
-      "iconPath": "../icons/files/vhdl.svg"
+      "iconPath": "../ions/files/vhdl.svg"
     },
     "_file_virtual": {
-      "iconPath": "../icons/files/virtual.svg"
+      "iconPath": "../ions/files/virtual.svg"
     },
     "_file_visualstudio": {
-      "iconPath": "../icons/files/visualstudio.svg"
+      "iconPath": "../ions/files/visualstudio.svg"
     },
     "_file_visualstudio_snippets": {
-      "iconPath": "../icons/files/visualstudio_snippets.svg"
+      "iconPath": "../ions/files/visualstudio_snippets.svg"
     },
     "_file_vite": {
-      "iconPath": "../icons/files/vite.svg"
+      "iconPath": "../ions/files/vite.svg"
     },
     "_file_vitest": {
-      "iconPath": "../icons/files/vitest.svg"
+      "iconPath": "../ions/files/vitest.svg"
     },
     "_file_vue": {
-      "iconPath": "../icons/files/vue.svg"
+      "iconPath": "../ions/files/vue.svg"
     },
     "_file_wakatime": {
-      "iconPath": "../icons/files/wakatime.svg"
+      "iconPath": "../ions/files/wakatime.svg"
     },
     "_file_wasm": {
-      "iconPath": "../icons/files/wasm.svg"
+      "iconPath": "../ions/files/wasm.svg"
     },
     "_file_webpack": {
-      "iconPath": "../icons/files/webpack.svg"
+      "iconPath": "../ions/files/webpack.svg"
     },
     "_file_word": {
-      "iconPath": "../icons/files/word.svg"
+      "iconPath": "../ions/files/word.svg"
     },
     "_file_wrangler": {
-      "iconPath": "../icons/files/wrangler.svg"
+      "iconPath": "../ions/files/wrangler.svg"
     },
     "_file_xaml": {
-      "iconPath": "../icons/files/xaml.svg"
+      "iconPath": "../ions/files/xaml.svg"
     },
     "_file_xml": {
-      "iconPath": "../icons/files/xml.svg"
+      "iconPath": "../ions/files/xml.svg"
     },
     "_file_yaml": {
-      "iconPath": "../icons/files/yaml.svg"
+      "iconPath": "../ions/files/yaml.svg"
     },
     "_file_yarn-lock": {
-      "iconPath": "../icons/files/yarn-lock.svg"
+      "iconPath": "../ions/files/yarn-lock.svg"
     },
     "_file_yarn": {
-      "iconPath": "../icons/files/yarn.svg"
+      "iconPath": "../ions/files/yarn.svg"
     },
     "_file_zephyr": {
-      "iconPath": "../icons/files/zephyr.svg"
+      "iconPath": "../ions/files/zephyr.svg"
     },
     "_file_zig": {
-      "iconPath": "../icons/files/zig.svg"
+      "iconPath": "../ions/files/zig.svg"
     },
     "_file_zip": {
-      "iconPath": "../icons/files/zip.svg"
+      "iconPath": "../ions/files/zip.svg"
     },
     "_folder_api": {
-      "iconPath": "../icons/folders/filled/folder_api.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_api.variant.palenight.svg"
     },
     "_folder_api_open": {
-      "iconPath": "../icons/folders/filled/folder_api_open.svg"
+      "iconPath": "../ions/folders/filled/folder_api_open.svg"
     },
     "_folder_app": {
-      "iconPath": "../icons/folders/filled/folder_app.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_app.variant.palenight.svg"
     },
     "_folder_app_open": {
-      "iconPath": "../icons/folders/filled/folder_app_open.svg"
+      "iconPath": "../ions/folders/filled/folder_app_open.svg"
     },
     "_folder_assets": {
-      "iconPath": "../icons/folders/filled/folder_assets.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_assets.variant.palenight.svg"
     },
     "_folder_assets_open": {
-      "iconPath": "../icons/folders/filled/folder_assets_open.svg"
+      "iconPath": "../ions/folders/filled/folder_assets_open.svg"
     },
     "_folder_changesets": {
-      "iconPath": "../icons/folders/filled/folder_changesets.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_changesets.variant.palenight.svg"
     },
     "_folder_changesets_open": {
-      "iconPath": "../icons/folders/filled/folder_changesets_open.svg"
+      "iconPath": "../ions/folders/filled/folder_changesets_open.svg"
     },
     "_folder_ci": {
-      "iconPath": "../icons/folders/filled/folder_ci.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_ci.variant.palenight.svg"
     },
     "_folder_ci_open": {
-      "iconPath": "../icons/folders/filled/folder_ci_open.svg"
+      "iconPath": "../ions/folders/filled/folder_ci_open.svg"
     },
     "_folder_claude": {
-      "iconPath": "../icons/folders/filled/folder_claude.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_claude.variant.palenight.svg"
     },
     "_folder_claude_open": {
-      "iconPath": "../icons/folders/filled/folder_claude_open.svg"
+      "iconPath": "../ions/folders/filled/folder_claude_open.svg"
     },
     "_folder_components": {
-      "iconPath": "../icons/folders/filled/folder_components.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_components.variant.palenight.svg"
     },
     "_folder_components_open": {
-      "iconPath": "../icons/folders/filled/folder_components_open.svg"
+      "iconPath": "../ions/folders/filled/folder_components_open.svg"
     },
     "_folder_config": {
-      "iconPath": "../icons/folders/filled/folder_config.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_config.variant.palenight.svg"
     },
     "_folder_config_open": {
-      "iconPath": "../icons/folders/filled/folder_config_open.svg"
+      "iconPath": "../ions/folders/filled/folder_config_open.svg"
     },
     "_folder_controller": {
-      "iconPath": "../icons/folders/filled/folder_controller.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_controller.variant.palenight.svg"
     },
     "_folder_controller_open": {
-      "iconPath": "../icons/folders/filled/folder_controller_open.svg"
+      "iconPath": "../ions/folders/filled/folder_controller_open.svg"
     },
     "_folder_coverage": {
-      "iconPath": "../icons/folders/filled/folder_coverage.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_coverage.variant.palenight.svg"
     },
     "_folder_coverage_open": {
-      "iconPath": "../icons/folders/filled/folder_coverage_open.svg"
+      "iconPath": "../ions/folders/filled/folder_coverage_open.svg"
     },
     "_folder_css": {
-      "iconPath": "../icons/folders/filled/folder_css.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_css.variant.palenight.svg"
     },
     "_folder_css_open": {
-      "iconPath": "../icons/folders/filled/folder_css_open.svg"
+      "iconPath": "../ions/folders/filled/folder_css_open.svg"
     },
     "_folder_cursor": {
-      "iconPath": "../icons/folders/filled/folder_cursor.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_cursor.variant.palenight.svg"
     },
     "_folder_cursor_open": {
-      "iconPath": "../icons/folders/filled/folder_cursor_open.svg"
+      "iconPath": "../ions/folders/filled/folder_cursor_open.svg"
     },
     "_folder_dark": {
-      "iconPath": "../icons/folders/filled/folder_dark.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_dark.variant.palenight.svg"
     },
     "_folder_database": {
-      "iconPath": "../icons/folders/filled/folder_database.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_database.variant.palenight.svg"
     },
     "_folder_database_open": {
-      "iconPath": "../icons/folders/filled/folder_database_open.svg"
+      "iconPath": "../ions/folders/filled/folder_database_open.svg"
     },
     "_folder_decorators": {
-      "iconPath": "../icons/folders/filled/folder_decorators.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_decorators.variant.palenight.svg"
     },
     "_folder_decorators_open": {
-      "iconPath": "../icons/folders/filled/folder_decorators_open.svg"
+      "iconPath": "../ions/folders/filled/folder_decorators_open.svg"
     },
     "_folder_dist": {
-      "iconPath": "../icons/folders/filled/folder_dist.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_dist.variant.palenight.svg"
     },
     "_folder_dist_open": {
-      "iconPath": "../icons/folders/filled/folder_dist_open.svg"
+      "iconPath": "../ions/folders/filled/folder_dist_open.svg"
     },
     "_folder_docs": {
-      "iconPath": "../icons/folders/filled/folder_docs.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_docs.variant.palenight.svg"
     },
     "_folder_docs_open": {
-      "iconPath": "../icons/folders/filled/folder_docs_open.svg"
+      "iconPath": "../ions/folders/filled/folder_docs_open.svg"
     },
     "_folder_fonts": {
-      "iconPath": "../icons/folders/filled/folder_fonts.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_fonts.variant.palenight.svg"
     },
     "_folder_fonts_open": {
-      "iconPath": "../icons/folders/filled/folder_fonts_open.svg"
+      "iconPath": "../ions/folders/filled/folder_fonts_open.svg"
     },
     "_folder_git": {
-      "iconPath": "../icons/folders/filled/folder_git.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_git.variant.palenight.svg"
     },
     "_folder_git_open": {
-      "iconPath": "../icons/folders/filled/folder_git_open.svg"
+      "iconPath": "../ions/folders/filled/folder_git_open.svg"
     },
     "_folder_github": {
-      "iconPath": "../icons/folders/filled/folder_github.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_github.variant.palenight.svg"
     },
     "_folder_github_open": {
-      "iconPath": "../icons/folders/filled/folder_github_open.svg"
+      "iconPath": "../ions/folders/filled/folder_github_open.svg"
     },
     "_folder_gitlab": {
-      "iconPath": "../icons/folders/filled/folder_gitlab.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_gitlab.variant.palenight.svg"
     },
     "_folder_gitlab_open": {
-      "iconPath": "../icons/folders/filled/folder_gitlab_open.svg"
+      "iconPath": "../ions/folders/filled/folder_gitlab_open.svg"
     },
     "_folder_gradle": {
-      "iconPath": "../icons/folders/filled/folder_gradle.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_gradle.variant.palenight.svg"
     },
     "_folder_gradle_open": {
-      "iconPath": "../icons/folders/filled/folder_gradle_open.svg"
+      "iconPath": "../ions/folders/filled/folder_gradle_open.svg"
     },
     "_folder_grpc": {
-      "iconPath": "../icons/folders/filled/folder_grpc.svg"
+      "iconPath": "../ions/folders/filled/folder_grpc.svg"
     },
     "_folder_grpc_open": {
-      "iconPath": "../icons/folders/filled/folder_grpc_open.svg"
+      "iconPath": "../ions/folders/filled/folder_grpc_open.svg"
     },
     "_folder_gulp": {
-      "iconPath": "../icons/folders/filled/folder_gulp.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_gulp.variant.palenight.svg"
     },
     "_folder_gulp_open": {
-      "iconPath": "../icons/folders/filled/folder_gulp_open.svg"
+      "iconPath": "../ions/folders/filled/folder_gulp_open.svg"
     },
     "_folder_husky": {
-      "iconPath": "../icons/folders/filled/folder_husky.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_husky.variant.palenight.svg"
     },
     "_folder_husky_open": {
-      "iconPath": "../icons/folders/filled/folder_husky_open.svg"
+      "iconPath": "../ions/folders/filled/folder_husky_open.svg"
     },
     "_folder_images": {
-      "iconPath": "../icons/folders/filled/folder_images.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_images.variant.palenight.svg"
     },
     "_folder_images_open": {
-      "iconPath": "../icons/folders/filled/folder_images_open.svg"
+      "iconPath": "../ions/folders/filled/folder_images_open.svg"
     },
     "_folder_intellij": {
-      "iconPath": "../icons/folders/filled/folder_intellij.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_intellij.variant.palenight.svg"
     },
     "_folder_intellij_open": {
-      "iconPath": "../icons/folders/filled/folder_intellij_open.svg"
+      "iconPath": "../ions/folders/filled/folder_intellij_open.svg"
     },
     "_folder_jest": {
-      "iconPath": "../icons/folders/filled/folder_jest.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_jest.variant.palenight.svg"
     },
     "_folder_jest_open": {
-      "iconPath": "../icons/folders/filled/folder_jest_open.svg"
+      "iconPath": "../ions/folders/filled/folder_jest_open.svg"
     },
     "_folder_js": {
-      "iconPath": "../icons/folders/filled/folder_js.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_js.variant.palenight.svg"
     },
     "_folder_js_open": {
-      "iconPath": "../icons/folders/filled/folder_js_open.svg"
+      "iconPath": "../ions/folders/filled/folder_js_open.svg"
     },
     "_folder_kotlin": {
-      "iconPath": "../icons/folders/filled/folder_kotlin.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_kotlin.variant.palenight.svg"
     },
     "_folder_kotlin_open": {
-      "iconPath": "../icons/folders/filled/folder_kotlin_open.svg"
+      "iconPath": "../ions/folders/filled/folder_kotlin_open.svg"
     },
     "_folder_light": {
-      "iconPath": "../icons/folders/filled/folder_light.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_light.variant.palenight.svg"
     },
     "_folder_locales": {
-      "iconPath": "../icons/folders/filled/folder_locales.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_locales.variant.palenight.svg"
     },
     "_folder_locales_open": {
-      "iconPath": "../icons/folders/filled/folder_locales_open.svg"
+      "iconPath": "../ions/folders/filled/folder_locales_open.svg"
     },
     "_folder_log": {
-      "iconPath": "../icons/folders/filled/folder_log.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_log.variant.palenight.svg"
     },
     "_folder_log_open": {
-      "iconPath": "../icons/folders/filled/folder_log_open.svg"
+      "iconPath": "../ions/folders/filled/folder_log_open.svg"
     },
     "_folder_middleware": {
-      "iconPath": "../icons/folders/filled/folder_middleware.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_middleware.variant.palenight.svg"
     },
     "_folder_middleware_open": {
-      "iconPath": "../icons/folders/filled/folder_middleware_open.svg"
+      "iconPath": "../ions/folders/filled/folder_middleware_open.svg"
     },
     "_folder_netlify": {
-      "iconPath": "../icons/folders/filled/folder_netlify.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_netlify.variant.palenight.svg"
     },
     "_folder_netlify_open": {
-      "iconPath": "../icons/folders/filled/folder_netlify_open.svg"
+      "iconPath": "../ions/folders/filled/folder_netlify_open.svg"
     },
     "_folder_next": {
-      "iconPath": "../icons/folders/filled/folder_next.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_next.variant.palenight.svg"
     },
     "_folder_next_open": {
-      "iconPath": "../icons/folders/filled/folder_next_open.svg"
+      "iconPath": "../ions/folders/filled/folder_next_open.svg"
     },
     "_folder_nginx": {
-      "iconPath": "../icons/folders/filled/folder_nginx.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_nginx.variant.palenight.svg"
     },
     "_folder_nginx_open": {
-      "iconPath": "../icons/folders/filled/folder_nginx_open.svg"
+      "iconPath": "../ions/folders/filled/folder_nginx_open.svg"
     },
     "_folder_node": {
-      "iconPath": "../icons/folders/filled/folder_node.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_node.variant.palenight.svg"
     },
     "_folder_node_open": {
-      "iconPath": "../icons/folders/filled/folder_node_open.svg"
+      "iconPath": "../ions/folders/filled/folder_node_open.svg"
     },
     "_folder_nuxt": {
-      "iconPath": "../icons/folders/filled/folder_nuxt.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_nuxt.variant.palenight.svg"
     },
     "_folder_nuxt_open": {
-      "iconPath": "../icons/folders/filled/folder_nuxt_open.svg"
+      "iconPath": "../ions/folders/filled/folder_nuxt_open.svg"
     },
     "_folder_open": {
-      "iconPath": "../icons/folders/filled/folder_open.svg"
+      "iconPath": "../ions/folders/filled/folder_open.svg"
     },
     "_folder_packages": {
-      "iconPath": "../icons/folders/filled/folder_packages.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_packages.variant.palenight.svg"
     },
     "_folder_packages_open": {
-      "iconPath": "../icons/folders/filled/folder_packages_open.svg"
+      "iconPath": "../ions/folders/filled/folder_packages_open.svg"
     },
     "_folder_plugin": {
-      "iconPath": "../icons/folders/filled/folder_plugin.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_plugin.variant.palenight.svg"
     },
     "_folder_plugin_open": {
-      "iconPath": "../icons/folders/filled/folder_plugin_open.svg"
+      "iconPath": "../ions/folders/filled/folder_plugin_open.svg"
     },
     "_folder_public": {
-      "iconPath": "../icons/folders/filled/folder_public.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_public.variant.palenight.svg"
     },
     "_folder_public_open": {
-      "iconPath": "../icons/folders/filled/folder_public_open.svg"
+      "iconPath": "../ions/folders/filled/folder_public_open.svg"
     },
     "_folder_root_dark": {
-      "iconPath": "../icons/folders/filled/folder_root_dark.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_root_dark.variant.palenight.svg"
     },
     "_folder_root_light": {
-      "iconPath": "../icons/folders/filled/folder_root_light.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_root_light.variant.palenight.svg"
     },
     "_folder_root_open": {
-      "iconPath": "../icons/folders/filled/folder_root_open.svg"
+      "iconPath": "../ions/folders/filled/folder_root_open.svg"
     },
     "_folder_routes": {
-      "iconPath": "../icons/folders/filled/folder_routes.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_routes.variant.palenight.svg"
     },
     "_folder_routes_open": {
-      "iconPath": "../icons/folders/filled/folder_routes_open.svg"
+      "iconPath": "../ions/folders/filled/folder_routes_open.svg"
     },
     "_folder_sass": {
-      "iconPath": "../icons/folders/filled/folder_sass.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_sass.variant.palenight.svg"
     },
     "_folder_sass_open": {
-      "iconPath": "../icons/folders/filled/folder_sass_open.svg"
+      "iconPath": "../ions/folders/filled/folder_sass_open.svg"
     },
     "_folder_scripts": {
-      "iconPath": "../icons/folders/filled/folder_scripts.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_scripts.variant.palenight.svg"
     },
     "_folder_scripts_open": {
-      "iconPath": "../icons/folders/filled/folder_scripts_open.svg"
+      "iconPath": "../ions/folders/filled/folder_scripts_open.svg"
     },
     "_folder_server": {
-      "iconPath": "../icons/folders/filled/folder_server.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_server.variant.palenight.svg"
     },
     "_folder_server_open": {
-      "iconPath": "../icons/folders/filled/folder_server_open.svg"
+      "iconPath": "../ions/folders/filled/folder_server_open.svg"
     },
     "_folder_src": {
-      "iconPath": "../icons/folders/filled/folder_src.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_src.variant.palenight.svg"
     },
     "_folder_src_open": {
-      "iconPath": "../icons/folders/filled/folder_src_open.svg"
+      "iconPath": "../ions/folders/filled/folder_src_open.svg"
     },
     "_folder_storybook": {
-      "iconPath": "../icons/folders/filled/folder_storybook.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_storybook.variant.palenight.svg"
     },
     "_folder_storybook_open": {
-      "iconPath": "../icons/folders/filled/folder_storybook_open.svg"
+      "iconPath": "../ions/folders/filled/folder_storybook_open.svg"
     },
     "_folder_svg": {
-      "iconPath": "../icons/folders/filled/folder_svg.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_svg.variant.palenight.svg"
     },
     "_folder_svg_open": {
-      "iconPath": "../icons/folders/filled/folder_svg_open.svg"
+      "iconPath": "../ions/folders/filled/folder_svg_open.svg"
     },
     "_folder_temp": {
-      "iconPath": "../icons/folders/filled/folder_temp.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_temp.variant.palenight.svg"
     },
     "_folder_temp_open": {
-      "iconPath": "../icons/folders/filled/folder_temp_open.svg"
+      "iconPath": "../ions/folders/filled/folder_temp_open.svg"
     },
     "_folder_test": {
-      "iconPath": "../icons/folders/filled/folder_test.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_test.variant.palenight.svg"
     },
     "_folder_test_open": {
-      "iconPath": "../icons/folders/filled/folder_test_open.svg"
+      "iconPath": "../ions/folders/filled/folder_test_open.svg"
     },
     "_folder_turbo": {
-      "iconPath": "../icons/folders/filled/folder_turbo.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_turbo.variant.palenight.svg"
     },
     "_folder_turbo_open": {
-      "iconPath": "../icons/folders/filled/folder_turbo_open.svg"
+      "iconPath": "../ions/folders/filled/folder_turbo_open.svg"
     },
     "_folder_types": {
-      "iconPath": "../icons/folders/filled/folder_types.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_types.variant.palenight.svg"
     },
     "_folder_types_open": {
-      "iconPath": "../icons/folders/filled/folder_types_open.svg"
+      "iconPath": "../ions/folders/filled/folder_types_open.svg"
     },
     "_folder_utils": {
-      "iconPath": "../icons/folders/filled/folder_utils.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_utils.variant.palenight.svg"
     },
     "_folder_utils_open": {
-      "iconPath": "../icons/folders/filled/folder_utils_open.svg"
+      "iconPath": "../ions/folders/filled/folder_utils_open.svg"
     },
     "_folder_vscode": {
-      "iconPath": "../icons/folders/filled/folder_vscode.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_vscode.variant.palenight.svg"
     },
     "_folder_vscode_open": {
-      "iconPath": "../icons/folders/filled/folder_vscode_open.svg"
+      "iconPath": "../ions/folders/filled/folder_vscode_open.svg"
     },
     "_folder_webpack": {
-      "iconPath": "../icons/folders/filled/folder_webpack.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_webpack.variant.palenight.svg"
     },
     "_folder_webpack_open": {
-      "iconPath": "../icons/folders/filled/folder_webpack_open.svg"
+      "iconPath": "../ions/folders/filled/folder_webpack_open.svg"
     },
     "_folder_wordpress": {
-      "iconPath": "../icons/folders/filled/folder_wordpress.variant.palenight.svg"
+      "iconPath": "../ions/folders/filled/folder_wordpress.variant.palenight.svg"
     },
     "_folder_wordpress_open": {
-      "iconPath": "../icons/folders/filled/folder_wordpress_open.svg"
+      "iconPath": "../ions/folders/filled/folder_wordpress_open.svg"
     }
   },
   "file": "_file_unknown",

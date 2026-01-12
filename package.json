@@ -26,7 +26,6 @@
   "categories": [
     "Themes"
   ],
-  "main": "./src/extension.js",
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#1b1f23",
@@ -35,9 +34,6 @@
   "engines": {
     "vscode": "^1.43.0"
   },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
   "contributes": {
     "themes": [
       {
@@ -156,6 +152,13 @@
         "id": "azir-buddha-vira-teal",
         "label": "Azir Buddha Vira Teal Icons",
         "path": "./src/old-buddha-perset/theme-icon/Icons-Teal.json"
+      }
+    ],
+    "productIconThemes": [
+      {
+        "id": "azir-buddha-vira-ui-icons",
+        "label": "Azir Buddha Vira UI Product Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Product-Icons.json"
       }
     ]
   },

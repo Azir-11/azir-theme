@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "Bash(for:*)",
+      "Bash(do sed -i '' 's|\"\"\\\\.\\\\./icons/|\"\"../ions/|g' \"$f\")",
+      "Bash(done)",
+      "Bash(ls:*)"
     ]
   }
 }
