@@ -11,4 +11,7 @@
     "typescriptreact",
     "vue"
   ],
+  "chat.tools.terminal.autoApprove": {
+    "npx eslint": true
+  },
 }

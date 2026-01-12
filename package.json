@@ -26,6 +26,7 @@
   "categories": [
     "Themes"
   ],
+  "main": "./src/extension.js",
   "icon": "icon.png",
   "galleryBanner": {
     "color": "#1b1f23",
@@ -34,6 +35,9 @@
   "engines": {
     "vscode": "^1.43.0"
   },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "contributes": {
     "themes": [
       {
@@ -60,6 +64,98 @@
         "label": "Azir Dark High Contrast",
         "uiTheme": "hc-black",
         "path": "./themes/dark-high-contrast.json"
+      },
+      {
+        "label": "Azir Buddha Vira Carbon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/carbon.json"
+      },
+      {
+        "label": "Azir Buddha Vira Carbon High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/carbon-high-contrast.json"
+      },
+      {
+        "label": "Azir Buddha Vira Deepforest",
+        "uiTheme": "vs-dark",
+        "path": "./themes/deepforest.json"
+      },
+      {
+        "label": "Azir Buddha Vira Deepforest High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/deepforest-high-contrast.json"
+      },
+      {
+        "label": "Azir Buddha Vira Graphene",
+        "uiTheme": "vs-dark",
+        "path": "./themes/graphene.json"
+      },
+      {
+        "label": "Azir Buddha Vira Graphene High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/graphene-high-contrast.json"
+      },
+      {
+        "label": "Azir Buddha Vira Ocean",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ocean.json"
+      },
+      {
+        "label": "Azir Buddha Vira Ocean High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/ocean-high-contrast.json"
+      },
+      {
+        "label": "Azir Buddha Vira Palenight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/palenight.json"
+      },
+      {
+        "label": "Azir Buddha Vira Palenight High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/palenight-high-contrast.json"
+      },
+      {
+        "label": "Azir Buddha Vira Teal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/teal.json"
+      },
+      {
+        "label": "Azir Buddha Vira Teal High Contrast",
+        "uiTheme": "hc-black",
+        "path": "./themes/teal-high-contrast.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "azir-buddha-vira-carbon",
+        "label": "Azir Buddha Vira Carbon Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Icons-Carbon.json"
+      },
+      {
+        "id": "azir-buddha-vira-deepforest",
+        "label": "Azir Buddha Vira Deepforest Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Icons-Deepforest.json"
+      },
+      {
+        "id": "azir-buddha-vira-graphene",
+        "label": "Azir Buddha Vira Graphene Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Icons-Graphene.json"
+      },
+      {
+        "id": "azir-buddha-vira-ocean",
+        "label": "Azir Buddha Vira Ocean Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Icons-Ocean.json"
+      },
+      {
+        "id": "azir-buddha-vira-palenight",
+        "label": "Azir Buddha Vira Palenight Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Icons-Palenight.json"
+      },
+      {
+        "id": "azir-buddha-vira-teal",
+        "label": "Azir Buddha Vira Teal Icons",
+        "path": "./src/old-buddha-perset/theme-icon/Icons-Teal.json"
       }
     ]
   },
